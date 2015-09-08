@@ -3,6 +3,8 @@
 
 ### Development
 ----------------------------------
+* This setup requires [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+* This setup also requires the [vagrant-cli](http://docs.vagrantup.com/v2/cli/)
 * Clone app to your projects or sites directory
 * `$ cd path/to/UCFClassroom`
 * `$ vagrant up`
