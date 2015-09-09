@@ -2,12 +2,22 @@
 
 one:
   name: MyString
+  instructor_id: 1
+  session_days: MyString
+  session_time: 2015-09-08 19:47:47
   description: MyText
-  add_drop_by: 2015-09-07
+  start_date: 2015-09-08
+  end_date: 2015-09-08
   available: false
+  video_id: MyString
 
 two:
   name: MyString
+  instructor_id: 1
+  session_days: MyString
+  session_time: 2015-09-08 19:47:47
   description: MyText
-  add_drop_by: 2015-09-07
+  start_date: 2015-09-08
+  end_date: 2015-09-08
   available: false
+  video_id: MyString
