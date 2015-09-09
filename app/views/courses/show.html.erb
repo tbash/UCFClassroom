@@ -1,24 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
-
-<p>
-  <strong>Add drop by:</strong>
-  <%= @course.add_drop_by %>
-</p>
-
-<p>
-  <strong>Available:</strong>
-  <%= @course.available %>
-</p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<h2>
+  <strong><%= @course.name %></strong>
+</h2>
