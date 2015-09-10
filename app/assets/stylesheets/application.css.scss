@@ -7,6 +7,14 @@ body {
   padding-top: 70px;
 }
 
+.navbar-brand .btn-warning {
+    color: inherit;
+}
+
+.user {
+  padding-right: 10px;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -212,6 +220,10 @@ ul {
 
 .btn-success:hover {
   background-color: #196c4a;
+}
+
+.btn-navbar {
+  background-color: #fff;
 }
 
 .btn-danger {

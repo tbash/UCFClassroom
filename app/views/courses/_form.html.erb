@@ -1,56 +1,21 @@
-<%= simple_form_for(@course, html: { class: 'form-horizontal' }) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
-
-      <ul>
-      <% @course.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for(@course) do |f| %>
+  <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.input :name %>
+    <%= f.input :mon %>
+    <%= f.input :tue %>
+    <%= f.input :wed %>
+    <%= f.input :thu %>
+    <%= f.input :session_time %>
+    <%= f.input :session_time_out %>
+    <%= f.input :description %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :in_session %>
+    <%= f.input :video_id %>
   </div>
-  <div class="form-inputs">
-    <%= f.label :instructor_id %><br>
-    <%= f.number_field :instructor_id %>
-  </div>
-  <div class="form-inputs">
-    <%= f.label :session_days %><br>
-    <%= f.text_field :session_days %>
-  </div>
-  <div class="form-inputs">
-    <%= f.label :session_time %><br>
-    <%= f.time_select :session_time %>
-  </div>
-  <div class="form-inputs">
-    <%= f.label :session_time_out %><br>
-    <%= f.time_select :session_time_out %>
-  </div>
-  <div class="form-inputs">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="form-inputs">
-    <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="form-inputs">
-    <%= f.label :end_date %><br>
-    <%= f.date_select :end_date %>
-  </div>
-  <div class="form-inputs">
-    <%= f.label :available %><br>
-    <%= f.check_box :available %>
-  </div>
-  <div class="form-inputs">
-    <%= f.label :video_id %><br>
-    <%= f.text_field :video_id %>
-  </div>
+
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
