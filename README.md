@@ -10,11 +10,11 @@
 * `$ vagrant up`
 * `$ vagrant ssh`
 
-#### This is a basic headless VM setup to get you up and running with rails for our project, this could be done by provisioning but this way could help with one's understanding of some linux commands
+#### This is a basic headless VM setup to get you up and running with rails for our project, the following could be done by provisioning vagrant but this way could help with one's understanding of some linux commands.
 --------------------------------------------------------------------------------------
 * `vagrant@vagrant-ubuntu-trusty-64:~$ git clone git://github.com/sstephenson/rbenv.git .rbenv`
-* `vagrant@vagrant-ubuntu-trusty-64:~$ echo 'export PATH="vagrant@vagrant-ubuntu-trusty-64:~$HOME/.rbenv/bin:vagrant@vagrant-ubuntu-trusty-64:~$PATH"' >> ~/.bash_profile`
-* `vagrant@vagrant-ubuntu-trusty-64:~$ echo 'eval "vagrant@vagrant-ubuntu-trusty-64:~$(rbenv init -)"' >> ~/.bash_profile`
+* `vagrant@vagrant-ubuntu-trusty-64:~$ echo 'export PATH="vagrant@vagrant-ubuntu-trusty-64:~$HOME/.rbenv/bin:vagrant@vagrant-ubuntu-trusty-64:~$ PATH"' >> ~/.bash_profile`
+* `vagrant@vagrant-ubuntu-trusty-64:~$ echo 'eval "vagrant@vagrant-ubuntu-trusty-64:~$ (rbenv init -)"' >> ~/.bash_profile`
 * `vagrant@vagrant-ubuntu-trusty-64:~$ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build`
 * `vagrant@vagrant-ubuntu-trusty-64:~$ echo 'export PATH="vagrant@vagrant-ubuntu-trusty-64:~$HOME/.rbenv/plugins/ruby-build/bin:vagrant@vagrant-ubuntu-trusty-64:~$PATH"' >> ~/.bash_profile`
 * `vagrant@vagrant-ubuntu-trusty-64:~$ echo "vagrant@vagrant-ubuntu-trusty-64:~$(<~/.bashrc)" >> ~/.bash_profile`
