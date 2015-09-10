@@ -18,7 +18,7 @@ class CoursesControllerTest < ActionController::TestCase
 
   test "should create course" do
     assert_difference('Course.count') do
-      post :create, course: { available: @course.available, description: @course.description, end_date: @course.end_date, instructor_id: @course.instructor_id, name: @course.name, session_days: @course.session_days, session_time: @course.session_time, start_date: @course.start_date, video_id: @course.video_id }
+      post :create, course: { description: @course.description, end_date: @course.end_date, in_session: @course.in_session, mon: @course.mon, name: @course.name, session_time: @course.session_time, session_time_out: @course.session_time_out, start_date: @course.start_date, thu: @course.thu, tue: @course.tue, video_id: @course.video_id, wed: @course.wed }
     end
 
     assert_redirected_to course_path(assigns(:course))
@@ -35,7 +35,7 @@ class CoursesControllerTest < ActionController::TestCase
   end
 
   test "should update course" do
-    patch :update, id: @course, course: { available: @course.available, description: @course.description, end_date: @course.end_date, instructor_id: @course.instructor_id, name: @course.name, session_days: @course.session_days, session_time: @course.session_time, start_date: @course.start_date, video_id: @course.video_id }
+    patch :update, id: @course, course: { description: @course.description, end_date: @course.end_date, in_session: @course.in_session, mon: @course.mon, name: @course.name, session_time: @course.session_time, session_time_out: @course.session_time_out, start_date: @course.start_date, thu: @course.thu, tue: @course.tue, video_id: @course.video_id, wed: @course.wed }
     assert_redirected_to course_path(assigns(:course))
   end
 
