@@ -2,22 +2,28 @@
 
 one:
   name: MyString
-  instructor_id: 1
-  session_days: MyString
-  session_time: 2015-09-08 19:47:47
+  mon: false
+  tue: false
+  wed: false
+  thu: false
+  session_time: 2015-09-10 04:23:12
+  session_time_out: 2015-09-10 04:23:12
   description: MyText
-  start_date: 2015-09-08
-  end_date: 2015-09-08
-  available: false
+  start_date: 2015-09-10
+  end_date: 2015-09-10
+  in_session: false
   video_id: MyString
 
 two:
   name: MyString
-  instructor_id: 1
-  session_days: MyString
-  session_time: 2015-09-08 19:47:47
+  mon: false
+  tue: false
+  wed: false
+  thu: false
+  session_time: 2015-09-10 04:23:12
+  session_time_out: 2015-09-10 04:23:12
   description: MyText
-  start_date: 2015-09-08
-  end_date: 2015-09-08
-  available: false
+  start_date: 2015-09-10
+  end_date: 2015-09-10
+  in_session: false
   video_id: MyString
