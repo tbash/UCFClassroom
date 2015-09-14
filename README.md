@@ -1,4 +1,7 @@
 [![Stories in Ready](https://badge.waffle.io/ucfpoosd9/UCFClassroom.png?label=ready&title=Ready)](https://waffle.io/ucfpoosd9/UCFClassroom)
+
+![](app/assets/images/main.png)
+
 ## The UCF eLearning Classroom
 
 ### Development

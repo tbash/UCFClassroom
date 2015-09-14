@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
-  @current_courses = Course.all
   # GET /courses
   # GET /courses.json
   def index
@@ -70,6 +70,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:name, :mon, :tue, :wed, :thu, :session_time, :session_time_out, :description, :start_date, :end_date, :in_session, :video_id)
+      params.require(:course).permit(:name, :mon, :tue, :wed, :thu, :session_time, :session_time_out, :description, :start_date, :end_date, :in_session, :channel_id)
     end
 end

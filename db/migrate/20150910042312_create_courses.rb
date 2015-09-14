@@ -12,7 +12,7 @@ class CreateCourses < ActiveRecord::Migration
       t.date :start_date
       t.date :end_date
       t.boolean :in_session
-      t.string :video_id
+      t.string :channel_id
 
       t.timestamps null: false
     end
