@@ -24,7 +24,6 @@
 * `vagrant@vagrant-ubuntu-trusty-64:~$ rbenv global 2.2.2`
 * `vagrant@vagrant-ubuntu-trusty-64:~$ echo "gem: --no-document" > ~/.gemrc`
 * `vagrant@vagrant-ubuntu-trusty-64:~$ gem install bundler`
-* `vagrant@vagrant-ubuntu-trusty-64:~$ gem install rails`
 * `vagrant@vagrant-ubuntu-trusty-64:~$ rbenv rehash`
 * `vagrant@vagrant-ubuntu-trusty-64:~$ sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev` (when prompted for password, hit Enter)
 * `vagrant@vagrant-ubuntu-trusty-64:~$ sudo apt-get install -y libpcre3-dev`
@@ -36,6 +35,7 @@
 #### Note the switch from rails stock server to something that can handle http streaming, [Phusion Passenger](https://www.phusionpassenger.com/)
 
 * `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger start`
+* `n` to `Compile with optimizations? [y/n]:`
 * Please note that this may take some time to compile, if seeing `Unable to download or extract Nginx source tarball` run this: `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger-config compile-nginx-engine --connect-timeout 60 --idle-timeout 60` and then `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger start`
 * launch browser and check it out here: http://33.33.33.104:3000/
 * ^C will stop the server
