@@ -12,7 +12,7 @@ one:
   start_date: 2015-09-10
   end_date: 2015-09-10
   in_session: false
-  video_id: MyString
+  channel_id: MyString
 
 two:
   name: MyString
@@ -26,4 +26,4 @@ two:
   start_date: 2015-09-10
   end_date: 2015-09-10
   in_session: false
-  video_id: MyString
+  channel_id: MyString
