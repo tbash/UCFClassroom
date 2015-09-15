@@ -35,7 +35,7 @@
 #### Note the switch from rails stock server to something that can handle http streaming, [Phusion Passenger](https://www.phusionpassenger.com/)
 
 * `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger start`
-* `n` to `Compile with optimizations? [y/n]:`
+* Answer `n` to `Compile with optimizations? [y/n]:`
 * Please note that this may take some time to compile, if seeing `Unable to download or extract Nginx source tarball` run this: `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger-config compile-nginx-engine --connect-timeout 60 --idle-timeout 60` and then `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger start`
 * launch browser and check it out here: http://33.33.33.104:3000/
 * ^C will stop the server
