@@ -2,6 +2,11 @@
 
 ## The UCF eLearning Classroom
 
+### Features
+------------------------------
+* Log in with only @ucf.edu or @knights.ucf.edu email only
+* If @ucf.edu, auto assigned to instructor, else auto assigned to student unless seeded as admin
+
 ### Development
 ----------------------------------
 * This setup requires [VirtualBox](https://www.virtualbox.org/wiki/Downloads)

@@ -2,6 +2,7 @@ class CreateCourses < ActiveRecord::Migration
   def change
     create_table :courses do |t|
       t.string :name
+      t.integer :instructor_id
       t.boolean :mon
       t.boolean :tue
       t.boolean :wed
