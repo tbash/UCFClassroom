@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!
+  before_action :admin_only, except: :index
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   # GET /courses
@@ -66,6 +67,12 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])
+    end
+    # Oops I repeated myself, using this as a work around for now
+    def admin_only
+      unless current_user.admin?
+        redirect_to :root, alert: "Access denied."
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
