@@ -1,26 +1,38 @@
-<p id="notice" ><%= notice %></p>
-<h1>Course Listing <%= link_to "New Course", new_course_path, class: 'btn btn-default pull-right'%></h1>
+<h1>
+  Course Listing
+  <% if current_user.try(:admin?) %>
+    <%= link_to "New Course", new_course_path, class: 'btn btn-default pull-right'%>
+  <% elsif current_user.try(:instructor?) %>
+    <%= link_to "Inbox", root_path, class: 'btn btn-default pull-right'%>
+  <% else %>
+    <%= link_to "Inbox", root_path, class: 'btn btn-default pull-right'%>
+  <% end %>
+</h1>
 <table>
   <body>
     <% @courses.each do |course| %>
       <div class="jumbotron">
         <p><%= course.name %></p>
         <p><%= course.description %></p>
-        <p>Start Date: <%= course.start_date.to_s(:long) %></p>
-        <p>End Date: <%= course.end_date.to_s(:long) %></p>
-        <p>Session:
-          <% if course.mon %><%= "Mon"%><% end %>
-          <% if course.tue %><%= "Tue"%><% end %>
+        <p><%= course.start_date.to_s(:long) %> - <%= course.end_date.to_s(:long) %></p>
+        <p>
+          <% if course.mon %><%= "Mon" %><% end %>
+          <% if course.tue %><%= "Tue" %><% end %>
           <%= " & "%>
-          <% if course.wed %><%= "Wed"%><% end %>
-          <% if course.thu %><%= "Thu"%><% end %>
+          <% if course.wed %><%= "Wed" %><% end %>
+          <% if course.thu %><%= "Thu" %><% end %>
           <%= course.session_time.strftime("%I:%M %p") %> - <%= course.session_time_out.strftime("%I:%M %p")%>
         </p>
-        <p>Instructor: <% if false %><%= course.instructor.first_name +" "+ course.instructor.last_name%><% end %></p>
-        <b><%= link_to 'Learn', course, class: 'btn btn-primary' %></b>
-        <b><%= link_to 'Teach', course, class: 'btn btn-primary' %></b>
-        <b><%= link_to 'Edit', edit_course_path(course), class: 'btn btn-warning' %></b>
-        <b><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
+        <p><% if course.try(:instructor) %><%= course.instructor.first_name +" "+ course.instructor.last_name%><% end %></p>
+        <% if current_user.try(:admin?) %>
+          <b><%= link_to 'Test', course, class: 'btn btn-primary' %></b>
+          <b><%= link_to 'Edit', edit_course_path(course), class: 'btn btn-warning' %></b>
+          <b><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
+        <% elsif current_user.try(:instructor?) %>
+          <b><%= link_to 'Teach', course, class: 'btn btn-primary' %></b>
+        <% else %>
+          <b><%= link_to 'Learn', course, class: 'btn btn-primary' %></b>
+        <% end %>
       </div>
     <% end %>
   </body>

@@ -1,7 +1,8 @@
 class CoursesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :admin_only, except: [:show, :index]
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
-  @current_courses = Course.all
   # GET /courses
   # GET /courses.json
   def index
@@ -67,9 +68,15 @@ class CoursesController < ApplicationController
     def set_course
       @course = Course.find(params[:id])
     end
+    # Oops I repeated myself, using this as a work around for now
+    def admin_only
+      unless current_user.admin?
+        redirect_to :root, alert: "Access denied."
+      end
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:name, :mon, :tue, :wed, :thu, :session_time, :session_time_out, :description, :start_date, :end_date, :in_session, :video_id)
+      params.require(:course).permit(:name, :mon, :tue, :wed, :thu, :session_time, :session_time_out, :description, :start_date, :end_date, :in_session, :channel_id)
     end
 end
