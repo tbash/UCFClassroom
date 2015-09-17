@@ -13,9 +13,10 @@ class CreateCourses < ActiveRecord::Migration
       t.date :start_date
       t.date :end_date
       t.boolean :in_session
-      t.string :channel_id
+      t.integer :channel_id
 
       t.timestamps null: false
     end
+    add_index :courses, :channel_id, unique: true
   end
 end

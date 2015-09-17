@@ -1,7 +1,6 @@
-<h1>Editing Course</h1>
+<h1>Editing <%= @course.name %></h1>
 <div class="jumbotron">
   <%= render 'form' %>
 
-  <%= link_to 'Show', @course, class:'btn btn-default' %>
   <%= link_to 'Back', courses_path, class:'btn btn-default' %>
 </div>

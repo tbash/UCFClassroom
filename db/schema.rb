@@ -26,10 +26,12 @@ ActiveRecord::Schema.define(version: 20150915175315) do
     t.date     "start_date"
     t.date     "end_date"
     t.boolean  "in_session"
-    t.string   "channel_id",       limit: 255
+    t.integer  "channel_id",       limit: 4
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
+
+  add_index "courses", ["channel_id"], name: "index_courses_on_channel_id", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -52,5 +54,6 @@ ActiveRecord::Schema.define(version: 20150915175315) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["ucf_id"], name: "index_users_on_ucf_id", unique: true, using: :btree
 
 end

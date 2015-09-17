@@ -1,3 +1,14 @@
-<h1>
-  <%= @course.name %>
-</h1>
+<h3>
+  Your Assets for <%= @course.name %>
+  <%= link_to " Course Channel", root_path, class: 'btn btn-primary pull-right fa fa-caret-square-o-right'%>
+</h3>
+
+<div class="jumbotron">
+  <p>
+    Assignments
+    <% if current_user.try(:admin?) || current_user.try(:instructor?) %>
+      <%= link_to " New Assignment", root_path, class: 'btn btn-default pull-right fa fa-file'%>
+    <%end%>
+  </p>
+  <hr>
+</div>
