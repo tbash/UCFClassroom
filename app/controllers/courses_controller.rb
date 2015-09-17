@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin_only, except: :index
+  before_action :admin_only, except: [:show, :index]
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   # GET /courses
