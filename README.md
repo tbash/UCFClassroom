@@ -3,9 +3,13 @@
 ## The UCF eLearning Classroom
 
 ### Features
+<!-- Items commented out have not been completed -->
 ------------------------------
-* Log in with only @ucf.edu or @knights.ucf.edu email only
+* Log in with @ucf.edu or @knights.ucf.edu email only
 * If @ucf.edu, auto assigned to instructor, else auto assigned to student unless seeded as admin
+* Admin has the ability to edit a user and change roles manually if necessary
+* Only the admin can edit/create/delete courses
+* Only instructor and admin can edit/create/delete assignments
 
 ### Development
 ----------------------------------
