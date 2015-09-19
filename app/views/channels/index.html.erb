@@ -6,9 +6,6 @@
   <thead>
     <tr>
       <th>Course</th>
-      <th>Belongs to</th>
-      <th>Has one</th>
-      <th>Has one</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,9 +14,6 @@
     <% @channels.each do |channel| %>
       <tr>
         <td><%= channel.course_id %></td>
-        <td><%= channel.belongs_to %></td>
-        <td><%= channel.has_one %></td>
-        <td><%= channel.has_one %></td>
         <td><%= link_to 'Show', channel %></td>
         <td><%= link_to 'Edit', edit_channel_path(channel) %></td>
         <td><%= link_to 'Destroy', channel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
