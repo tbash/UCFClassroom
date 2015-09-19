@@ -6,7 +6,7 @@ APP_NAME = "UCFClassroom"
 Vagrant.configure(2) do |config|
 
   config.vm.box = "ubuntu/trusty64"
-  config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  config.vm.box_url = "https://atlas.hashicorp.com/ubuntu/boxes/trusty64/versions/20150911.0.0/providers/virtualbox.box"
   config.vm.box_check_update = false
 
   config.vm.network "private_network", ip: "33.33.33.104"
