@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @channel.course_id %>
+</p>
+
+<p>
+  <strong>Belongs to:</strong>
+  <%= @channel.belongs_to %>
+</p>
+
+<p>
+  <strong>Has one:</strong>
+  <%= @channel.has_one %>
+</p>
+
+<p>
+  <strong>Has one:</strong>
+  <%= @channel.has_one %>
+</p>
+
+<%= link_to 'Edit', edit_channel_path(@channel) %> |
+<%= link_to 'Back', channels_path %>
