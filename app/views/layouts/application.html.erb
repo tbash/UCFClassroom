@@ -18,7 +18,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <% Course.all.each do |course| %>
-                  <li><%= link_to course.name, course %></li>
+                  <li><%= link_to course.try(:name), course %></li>
                 <% end %>
                 <li class="divider"></li>
                 <li><%= link_to 'User Settings', edit_user_registration_path %></li>
@@ -38,14 +38,18 @@
               </ul>
             </li>
           </ul>
-        <%end%>
+        <% end %>
       </div>
     </div>
   </div>
-<div class="container">
-  <%= flash_messages %>
-  <%= yield %>
-</div>
+  <% if current_page?(channel_path(Channel.all.each {|chan| chan.id})) %>
+    <div>
+  <% else %>
+    <div class="container">
+  <% end %>
+      <%= flash_messages %>
+      <%= yield %>
+    </div>
 
 </body>
 </html>

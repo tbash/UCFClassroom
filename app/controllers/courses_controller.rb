@@ -27,7 +27,6 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course = Course.new(course_params)
-
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
@@ -37,6 +36,7 @@ class CoursesController < ApplicationController
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end
+    @course.channel = Channel.create(id: @course.id, course_id: @course.id)
   end
 
   # PATCH/PUT /courses/1
@@ -77,6 +77,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:name, :mon, :tue, :wed, :thu, :session_time, :session_time_out, :description, :start_date, :end_date, :in_session, :channel_id)
+      params.require(:course).permit(:name, :mon, :tue, :wed, :thu, :session_time, :session_time_out, :description, :start_date, :end_date, :in_session)
     end
 end
