@@ -56,7 +56,7 @@ class ChannelsController < ApplicationController
   def destroy
     @channel.destroy
     respond_to do |format|
-      format.html { redirect_to channels_url, notice: 'Channel was successfully destroyed.' }
+      format.html { redirect_to root, notice: 'Channel was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class ChannelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def channel_params
-      params.require(:channel).permit(:course_id, :belongs_to, :has_one, :has_one)
+      params.require(:channel).permit(:course_id)
     end
 end
