@@ -42,14 +42,10 @@
       </div>
     </div>
   </div>
-  <% if current_page?(channels_path) %>
-    <div>
-  <% else %>
-    <div class="container">
-  <% end %>
-      <%= flash_messages %>
-      <%= yield %>
-    </div>
+  <div class="<%= params[:controller] == 'channels' ? '' : 'container' %>">
+    <%= flash_messages %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>
