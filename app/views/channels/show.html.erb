@@ -9,7 +9,14 @@
   </h4>
 </div>
 <div class="col-sm-3 jumbotron">
-  <h4>
-    Messenger
-  </h4>
+  <div id="messages">
+    <%= render partial: @channel.messages %>
+  </div>
+  <%= simple_form_for [@channel, Message.new]  do |f| %>
+    <div class="field">
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+    <br>
+    <%= f.submit "send", class: "btn btn-primary" %>
+  <% end %>
 </div>
