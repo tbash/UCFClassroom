@@ -1,5 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<h3>
-  <%= @channel.course.name %> Course Channel
-</h3>
+<div class="col-lg-12 text-center">
+  <h3>
+    <%= @channel.course.name %> Course Channel
+  </h3>
+</div>
+<div class="col-sm-9 jumbotron">
+  <h4>
+    Slideshow
+  </h4>
+</div>
+<div class="col-sm-3 jumbotron">
+  <div id="messages">
+    <%= render partial: @channel.messages %>
+  </div>
+  <%= simple_form_for [@channel, Message.new]  do |f| %>
+    <div class="field">
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+    <br>
+    <%= f.submit "send", class: "btn btn-primary" %>
+  <% end %>
+</div>
