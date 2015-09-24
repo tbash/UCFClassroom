@@ -28,7 +28,20 @@ class MessagesController < ApplicationController
   end
 
   def event
-
+    response.headers['Conent-Type'] = "text/event-stream"
+    start = Time.zone.now
+    10.times do
+      Message.uncached
+        Message.where('created_at > ?', start).each do |message|
+        response.stream.write "data: #{message}\n\n"
+        strart = message.created_at
+      end
+        sleep 2
+    end
+  rescue IOError
+    logger.info "Stream closed"
+  ensure
+    response.stream.close
   end
 
   private

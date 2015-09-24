@@ -45,7 +45,22 @@
 
 * `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger start`
 * Answer `n` to `Compile with optimizations? [y/n]:`
-* Please note that this may take some time to compile, if seeing `Unable to download or extract Nginx source tarball` run this: `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger-config compile-nginx-engine --connect-timeout 60 --idle-timeout 60` and then `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger start`
+* Please note that this may take some time to compile, if seeing `Unable to download or extract Nginx source tarball` run this: `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger-config compile-nginx-engine --connect-timeout 60 --idle-timeout 60`
+* `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger-install-nginx-module` 
+
+```
+# Download nginx startup script
+wget -O init-deb.sh https://www.linode.com/docs/assets/660-init-deb.sh
+
+# Move the script to the init.d directory & make executable
+sudo mv init-deb.sh /etc/init.d/nginx
+sudo chmod +x /etc/init.d/nginx
+
+# Add nginx to the system startup
+sudo /usr/sbin/update-rc.d -f nginx defaults
+```
+
+* `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger start`
 * launch browser and check it out here: http://33.33.33.104:3000/
 * ^C will stop the server
 
