@@ -1,0 +1,6 @@
+<%= div_for(message) do %>
+  <div class="messages_wrapper clearfix">
+    <div class="pull-left">
+      <p class="lead"><b><%= message.user.email[/[^@]+/] %></b>: <%= message.content %></p>
+    </div>
+<% end %>

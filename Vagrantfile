@@ -1,13 +1,12 @@
+# encoding: utf-8
+
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-APP_NAME = "UCFClassroom"
-
-Vagrant.configure(2) do |config|
+Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/trusty64"
-  config.vm.box_url = "https://atlas.hashicorp.com/ubuntu/boxes/trusty64/versions/20150911.0.0/providers/virtualbox.box"
-  config.vm.box_check_update = false
+  config.ssh.forward_agent = true
 
   config.vm.network "private_network", ip: "33.33.33.104"
   config.vm.network "forwarded_port", guest: 9000, host: 9000
@@ -19,23 +18,44 @@ Vagrant.configure(2) do |config|
     vb.memory = "2048"
   end
 
-  config.vm.provision "shell", inline: <<-SHELL
-    sudo apt-get update
-    sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
-    # git clone git://github.com/sstephenson/rbenv.git .rbenv
-    # echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-    # echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-    # git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-    # echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bash_profile
-    # sudo echo "$(<~/.bashrc)" >> ~/.bash_profile
-    # source ~/.bash_profile
-    # rbenv install -v 2.2.2
-    # rbenv global 2.2.2
-    # gem install bundler
-    # gem install rails
-    # rbenv rehash
-    # sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
-    # sudo apt-get install -y nodejs
-  SHELL
+  config.vm.provision "chef_solo" do |chef|
+    chef.version = "11.18"
+    chef.cookbooks_path = "cookbooks"
+    chef.add_recipe 'apt'
+    chef.add_recipe 'vim'
+    chef.add_recipe 'git'
+    chef.add_recipe 'nodejs'
+    chef.add_recipe 'redis'
+    chef.add_recipe 'nginx'
+    chef.json = {
+      :nginx => {
+        :dir                => "/etc/nginx",
+        :log_dir            => "/var/log/nginx",
+        :binary             => "/usr/sbin/nginx",
+        :user               => "vagrant",
+        :init_style         => "runit",
+        :pid                => "/var/run/nginx.pid",
+        :worker_connections => "1024"
+      },
+      :redis => {
+        :bind        => "127.0.0.1",
+        :port        => "6379",
+        :config_path => "/etc/redis/redis.conf",
+        :daemonize   => "yes",
+        :timeout     => "300",
+        :loglevel    => "notice"
+      }
+    }
+  end
 
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   sudo git clone git://github.com/sstephenson/rbenv.git .rbenv
+  #   echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+  #   echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+  #   sudo git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  #   echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bash_profile
+  #   echo "$(<~/.bashrc)" >> ~/.bash_profile
+  #   echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+  #   source ~/.bash_profile
+  #   SHELL
 end

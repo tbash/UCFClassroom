@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   enum role: [:admin, :student, :instructor]
   after_initialize :set_role, :if => :new_record?
+  has_many :messages
 
   def set_role
     if self.email .match /\A([\w\.%\+\-]+)(@ucf\.edu\z)/i
