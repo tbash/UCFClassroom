@@ -42,6 +42,7 @@ vagrant@vagrant-ubuntu-trusty-64:~$ rbenv global 2.2.3
 vagrant@vagrant-ubuntu-trusty-64:~$ gem install bundler
 vagrant@vagrant-ubuntu-trusty-64:~$ rbenv rehash
 vagrant@vagrant-ubuntu-trusty-64:~$ sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev libpcre3-dev # hit enter for all pink screen questions, these are in regard to the password setup
+# Starting Redis
 vagrant@vagrant-ubuntu-trusty-64:~$ wget http://download.redis.io/redis-stable.tar.gz
 vagrant@vagrant-ubuntu-trusty-64:~$ tar xvzf redis-stable.tar.gz
 vagrant@vagrant-ubuntu-trusty-64:~$ cd redis-stable
@@ -59,7 +60,7 @@ vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ rake db:create db:migrate db
 * Please note that this may take some time to compile, if seeing `Unable to download or extract Nginx source tarball` run this: `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger-config compile-nginx-engine --connect-timeout 60 --idle-timeout 60`
 * `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger-install-nginx-module`
 
-#### These steps can be skipped if you but you may have to start nginx manually at each start be running `sudo service nginx start`
+##### These steps can be skipped if want you but you may have to start nginx manually at each start be running `sudo service nginx start`
 
 ```
 # Download nginx startup script

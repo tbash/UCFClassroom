@@ -29,18 +29,17 @@ class MessagesController < ApplicationController
 
   def event
     response.headers['Conent-Type'] = "text/event-stream"
-    start = Time.zone.now
-    10.times do
-      Message.uncached
-        Message.where('created_at > ?', start).each do |message|
-        response.stream.write "data: #{message}\n\n"
-        strart = message.created_at
+    redis = Redis.new(:host => "33.33.33.104", :port => 6379)
+    logger.info "New stream starting, connecting to redis"
+    redis.subscribe('message.create') do |on|
+      on.message do |event, data|
+        response.stream.write("event: parse\ndata: #{data}\n\n")
       end
-        sleep 2
     end
   rescue IOError
     logger.info "Stream closed"
   ensure
+    redis.quit
     response.stream.close
   end
 
