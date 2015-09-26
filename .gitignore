@@ -16,3 +16,4 @@
 .DS_Store
 cookbooks
 Cheffile.lock
+dump.rdb
