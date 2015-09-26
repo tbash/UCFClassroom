@@ -25,7 +25,7 @@ $ vagrant up
 $ vagrant ssh
 ```
 
-#### This is a basic headless VM setup to get you up and running with rails for our project.
+#### This is a basic headless VM setup to get you up and running with rails for the project.
 
 ```bash
 vagrant@vagrant-ubuntu-trusty-64:~$ sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
@@ -51,7 +51,7 @@ vagrant@vagrant-ubuntu-trusty-64:~$ cd /srv/UCFClassroom
 vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ bundle
 vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ rake db:create db:migrate db:seed
 ```
-##### Permissions may only be granted to the root user in during some steps, if this is the case the command `sudo chown -R vagrant.vagrant .rbenv/` may need to be run.
+##### Permissions may only be granted to the root user during some steps involving the download of a new ruby version and ruby_build, if this is the case the command `sudo chown -R vagrant.vagrant .rbenv/` may need to be run.
 
 #### Note the switch from rails stock server to something that can handle http streaming, [Phusion Passenger](https://www.phusionpassenger.com/)
 
@@ -60,7 +60,7 @@ vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ rake db:create db:migrate db
 * Please note that this may take some time to compile, if seeing `Unable to download or extract Nginx source tarball` run this: `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger-config compile-nginx-engine --connect-timeout 60 --idle-timeout 60`
 * `vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ passenger-install-nginx-module`
 
-##### These steps can be skipped if want you but you may have to start nginx manually at each start be running `sudo service nginx start`
+##### These steps can be skipped if you want but you may have to start nginx manually at each start be running `sudo service nginx start`
 
 ```
 # Download nginx startup script
