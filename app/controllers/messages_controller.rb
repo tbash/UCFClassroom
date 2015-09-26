@@ -29,8 +29,7 @@ class MessagesController < ApplicationController
 
   def event
     response.headers['Conent-Type'] = "text/event-stream"
-    redis = Redis.new(:host => "33.33.33.104", :port => 6379)
-    logger.info "New stream starting, connecting to redis"
+    redis = Redis.new
     redis.subscribe('message.create') do |on|
       on.message do |event, data|
         response.stream.write("event: parse\ndata: #{data}\n\n")

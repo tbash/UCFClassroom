@@ -15,3 +15,12 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+
+// var source;
+// source = new EventSource('/messages/events');
+// source.addEventListener('message', function(e) {
+//   var message;
+//   message = $parseJSON(e.data).message;
+//   return $('#channel').append($('<li>').text("" + message.user + ": " + message.content));
+// });
