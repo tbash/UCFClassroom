@@ -18,7 +18,7 @@
         <%= simple_form_for [@channel, Message.new]  do |f| %>
           <div class="panel-footer">
             <div class="input-group">
-              <%= f.input :content, label: false, class: 'form-control', type: 'text',placeholder:'uMessage' %>
+              <%= f.search_field :content, label: false, class: 'form-control', type: 'text',placeholder:'uMessage' %>
               <span class="input-group-btn">
                 <%= f.submit "send", class: 'btn btn-warning', type: 'button' %>
               </span>
