@@ -4,7 +4,7 @@
 
 
 body {
-  padding-top: 70px;
+  padding-top: 50px;
 }
 
 .navbar-brand .btn-warning {
@@ -54,7 +54,7 @@ body {
 }
 
 .container .jumbotron {
-    border-radius: 0px;
+    border-radius: 2px;
 }
 
 .navbar-new {
@@ -78,6 +78,10 @@ body {
 @media screen and (min-width: 768px) {
   .container {
     max-width: 850px;
+  }
+
+  .channel-container {
+    max-width: 1200px;
   }
 
   /* Remove the padding we set earlier */
@@ -149,15 +153,6 @@ ul {
   margin: 12% auto;
 }
 
-.has-feedback .form-control-feedback {
-  top: 0;
-  left: 0;
-  width: 46px;
-  height: 46px;
-  line-height: 46px;
-  color: #555;
-}
-
 .password-strength-indicator {
   position: absolute;
   top: 10px;
@@ -175,10 +170,6 @@ ul {
   border-radius: 5px;
 }
 
-.has-feedback .form-control {
-  padding-left: 42.5px;
-}
-
 .alert-material {
   position: fixed;
   right: 12px;
@@ -188,9 +179,7 @@ ul {
   min-height: 48px;
   padding: 13px 24px 12px;
   font-family: 'Roboto', sans-serif;
-  color: #f1f1f1;
   cursor: default;
-  background: #323232;
   border-radius: 2px;
   outline: none;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -260,63 +249,60 @@ ul {
   margin-right: 5px;
 }
 
-/*********************
-* Animations
-*********************/
-
-.fadeZoom.ng-enter {
-  -webkit-animation-duration: 0.6s, 0.2s;
-  -moz-animation-duration: 0.2s, 0.2s;
-  -ms-animation-duration: 0.2s, 0.2s;
-  animation-duration: 0.2, 0.2s;
-  -webkit-animation-name: fadeIn, zoomIn;
-  -moz-animation-name: fadeIn, zoomIn;
-  -ms-animation-name: fadeIn, zoomIn;
-  animation-name: fadeIn, zoomIn;
+.chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.fadeZoomFadeDown.ng-enter {
-  -webkit-animation-duration: 0.2s, 0.2s;
-  -moz-animation-duration: 0.2s, 0.2s;
-  -ms-animation-duration: 0.2s, 0.2s;
-  animation-duration: 0.2s, 0.2s;
-  -webkit-animation-name: fadeIn, zoomIn;
-  -moz-animation-name: fadeIn, zoomIn;
-  -ms-animation-name: fadeIn, zoomIn;
-  animation-name: fadeIn, zoomIn;
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
 }
 
-.fadeZoomFadeDown.ng-leave {
-  -webkit-animation: fadeOutDown 0.2s;
-  -moz-animation: fadeOutDown 0.2s;
-  -ms-animation: fadeOutDown 0.2s;
-  animation: fadeOutDown 0.2s;
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
 }
 
-@-webkit-keyframes zoomIn {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(0.8, 0.8, 0.8);
-    -moz-transform: scale3d(0.8, 0.8, 0.8);
-    -ms-transform: scale3d(0.8, 0.8, 0.8);
-    transform: scale3d(0.8, 0.8, 0.8);
-  }
-
-  50% {
-    opacity: 1;
-  }
+.panel-heading
+{
+    background-color: #f1c40f;
 }
 
-@keyframes zoomIn {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(0.8, 0.8, 0.8);
-    -moz-transform: scale3d(0.8, 0.8, 0.8);
-    -ms-transform: scale3d(0.8, 0.8, 0.8);
-    transform: scale3d(0.8, 0.8, 0.8);
-  }
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
+}
 
-  50% {
-    opacity: 1;
-  }
+.panel-body
+{
+    overflow-y: scroll;
+    height: 500px;
+}
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+.inline {
+   display: inline;
 }

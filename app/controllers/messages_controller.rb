@@ -28,7 +28,18 @@ class MessagesController < ApplicationController
   end
 
   def event
-
+    response.headers['Conent-Type'] = "text/event-stream"
+    redis = Redis.new
+    redis.subscribe('message.create') do |on|
+      on.message do |event, data|
+        response.stream.write("event: parse\ndata: #{data}\n\n")
+      end
+    end
+  rescue IOError
+    logger.info "Stream closed"
+  ensure
+    redis.quit
+    response.stream.close
   end
 
   private
