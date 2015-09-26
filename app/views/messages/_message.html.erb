@@ -1,13 +1,9 @@
 <%= div_for(message) do %>
-  <li class="left clearfix"class="<%= message.user.id == current_user.id ? 'right clearfix' : 'left clearfix' %>">
-      <div class="chat-body clearfix">
-          <div class="header">
-              <strong class="primary-font"><%= message.user.email[/[^@]+/] %></strong>
-          </div>
-          <p>
-            <%= message.content %>
-          </p>
-      </div>
+  <li>
+      <strong class="primary-font"><% unless message.user.student? %>instructor: <% end %><%= message.user.email[/[^@]+/] %></strong>
+      <p>
+        <%= message.content %>
+      </p>
   </li>
 <% end %>
 
