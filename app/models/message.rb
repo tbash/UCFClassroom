@@ -1,4 +1,4 @@
 class Message < ActiveRecord::Base
   belongs_to :user
-  belongs_to :messenger
+  belongs_to :classroom
 end

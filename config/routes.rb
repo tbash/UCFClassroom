@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :channels do
+  resources :classrooms do
     resources :messages do
       collection { get :events}
     end

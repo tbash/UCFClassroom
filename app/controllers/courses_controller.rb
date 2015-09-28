@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end
-    @course.channel = Channel.create(id: @course.id, course_id: @course.id)
+    @course.classroom = Classroom.create(id: @course.id, course_id: @course.id)
   end
 
   # PATCH/PUT /courses/1
@@ -56,8 +56,8 @@ class CoursesController < ApplicationController
   # DELETE /courses/1
   # DELETE /courses/1.json
   def destroy
-    channel = @course.channel
-    channel.destroy
+    classroom = @course.classroom
+    classroom.destroy
     @course.destroy
     respond_to do |format|
       format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
