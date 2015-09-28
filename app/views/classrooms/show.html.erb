@@ -1,6 +1,6 @@
 <div class="col-lg-12 text-center">
   <h3>
-    <%= @channel.course.name %> Course Channel
+    <%= @classroom.course.name %> Classroom
   </h3>
 </div>
 <div class="col-sm-9">
@@ -11,11 +11,11 @@
         <div class="panel-body">
             <ul class="chat">
               <div id="messages">
-                <%= render partial: @channel.messages %>
+                <%= render partial: @classroom.messages %>
               </div>
             </ul>
         </div>
-        <%= simple_form_for [@channel, Message.new]  do |f| %>
+        <%= simple_form_for [@classroom, Message.new]  do |f| %>
           <div class="panel-footer">
             <div class="input-group">
               <%= f.search_field :content, label: false, class: 'form-control', type: 'text',placeholder:'uMessage' %>

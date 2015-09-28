@@ -1,10 +1,18 @@
 <%= div_for(message) do %>
-  <li>
-      <strong class="primary-font"><% unless message.user.student? %>instructor: <% end %><%= message.user.email[/[^@]+/] %></strong>
-      <p>
-        <%= message.content %>
-      </p>
-  </li>
+<li>
+  <% unless message.user.student? %>
+    <strong class="primary-font">
+       <font color="red"><%= message.user.email[/[^@]+/] %></font>
+    </strong>
+  <% else %>
+    <strong class="primary-font">
+      <%= message.user.email[/[^@]+/] %>
+    </strong>
+  <% end %>
+  <p>
+    <%= message.content %>
+  </p>
+</li>
 <% end %>
 
 <!-- Saving to model after
