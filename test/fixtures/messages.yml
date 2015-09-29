@@ -2,10 +2,10 @@
 
 one:
   user_id: 1
-  channel_id: 1
+  classroom_id: 1
   content: MyText
 
 two:
   user_id: 1
-  channel_id: 1
+  classroom_id: 1
   content: MyText

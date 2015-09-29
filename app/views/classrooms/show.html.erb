@@ -1,0 +1,24 @@
+<div class="col-lg-12 text-center">
+  <h3>
+    <%= @classroom.course.name %> Classroom
+  </h3>
+</div>
+<div class="col-sm-9">
+  <!-- <iframe  style="width: 1000px; height: 500px" src="http://lab.hakim.se/reveal-js"></iframe> -->
+</div>
+<div class="col-sm-3">
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <ul class="chat">
+              <div id="messages" data-channel="messages" data-classroom-id="<%= @classroom.id %>">
+                <%= render partial: @classroom.messages %>
+              </div>
+            </ul>
+        </div>
+        <%= render 'messages/new', classroom: @classroom %>
+    </div>
+</div>
+<script>
+  var div = $('.panel-body');
+  div.scrollTop( div.get(0).scrollHeight );
+</script>
