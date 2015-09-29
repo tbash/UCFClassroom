@@ -17,7 +17,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'font-awesome-rails', '~> 4.4.0.0'
-gem 'passenger', '~> 5.0.17'
+gem 'puma', '~> 2.14.0'
 gem 'simple_form'
 gem 'redis'
 gem 'sprockets', '>=3.0.0.beta'
