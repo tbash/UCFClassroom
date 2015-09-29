@@ -24,9 +24,11 @@ class MessagesController < ApplicationController
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
-    head :ok
   end
 
+  def render
+    render :status => 200
+  end
   # def event
   #   response.headers['Conent-Type'] = "text/event-stream"
   #   redis = Redis.new
