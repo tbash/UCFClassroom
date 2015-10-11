@@ -5,6 +5,8 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
+    # Currently using jQuery way to sort to the bottom may be swapping
+    # out for Message.all.reverse if that works easily 
     @messages = Message.all
   end
 
@@ -29,20 +31,7 @@ class MessagesController < ApplicationController
   def render
     render :status => 200
   end
-  # def event
-  #   response.headers['Conent-Type'] = "text/event-stream"
-  #   redis = Redis.new
-  #   redis.subscribe('message.create') do |on|
-  #     on.message do |event, data|
-  #       response.stream.write("event: parse\ndata: #{data}\n\n")
-  #     end
-  #   end
-  # rescue IOError
-  #   logger.info "Stream closed"
-  # ensure
-  #   redis.quit
-  #   response.stream.close
-  # end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
