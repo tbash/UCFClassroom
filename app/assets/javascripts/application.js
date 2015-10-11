@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
 //= require turbolinks
-//= require channels
-//= require_tree .
+//= require cable
+//= require ./remote
+//= require ./messages

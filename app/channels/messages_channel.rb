@@ -1,10 +1,11 @@
 class MessagesChannel < ApplicationCable::Channel
-  def follow(data)
-    stop_all_streams
-    stream_from "classrooms:#{data['classroom_id'].to_i}:messages"
+  def subscribed
+    stream_from "messages"
   end
 
-  def unfollow
-    stop_all_streams
+  def send_message(data)
+    message = current_user.messages.create(content: data['content'])
+    ActionCable.server.broadcast 'messages', { message: message,
+                                               user: current_user }
   end
 end
