@@ -14,5 +14,4 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require channels
-//= require_tree .
+//= require_tree ./channels

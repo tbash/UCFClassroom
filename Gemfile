@@ -23,6 +23,7 @@ gem 'simple_form'
 gem 'redis'
 gem 'sprockets', '>=3.0.0.beta'
 gem 'sprockets-es6'
+gem 'foreman'
 group :development, :test do
   gem 'byebug'
 end

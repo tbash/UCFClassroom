@@ -14,6 +14,7 @@ class MessagesController < ApplicationController
     @classroom = Classroom.find(params[:classroom_id])
     @message = @classroom.messages.new(message_params)
     @message.user = current_user
+    @message.save
 
     respond_to do |format|
       if @message.save
@@ -24,25 +25,17 @@ class MessagesController < ApplicationController
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
+
+    ActionCable.server.broadcast 'messages',
+      message: @message.content,
+      user: current_user.user_name
+
+    head :ok
   end
 
   def render
-    render :status => 200
+    render status: 200
   end
-  # def event
-  #   response.headers['Conent-Type'] = "text/event-stream"
-  #   redis = Redis.new
-  #   redis.subscribe('message.create') do |on|
-  #     on.message do |event, data|
-  #       response.stream.write("event: parse\ndata: #{data}\n\n")
-  #     end
-  #   end
-  # rescue IOError
-  #   logger.info "Stream closed"
-  # ensure
-  #   redis.quit
-  #   response.stream.close
-  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

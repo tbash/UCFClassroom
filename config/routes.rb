@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   resources :courses
 
   resources :classrooms do
-    resources :messages do
-      collection { get :events}
-    end
+    resources :messages
   end
 
   root to: "courses#index"
