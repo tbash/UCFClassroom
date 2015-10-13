@@ -13,6 +13,10 @@ Vagrant.configure("2") do |config|
 
   config.vm.synced_folder ".", "/srv/UCFClassroom"
 
+  config.vm.hostname = 'dev.ucfclassroom.com'
+  config.hostmanager.enabled = true
+  config.hostmanager.manage_host = true
+
   config.vm.provider "virtualbox" do |vb|
     vb.cpus = "2"
     vb.memory = "2048"

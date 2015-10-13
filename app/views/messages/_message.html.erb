@@ -2,11 +2,11 @@
   <li>
     <% unless message.user.student? %>
       <strong class="primary-font" data-user-id="<%= message.user.id %>">
-         <font color="red"><%= message.user.email[/[^@]+/] %></font>
+         <font color="red"><%= message.user.user_name %></font>
       </strong>
     <% else %>
       <strong class="primary-font" data-user-id="<%= message.user.id %>">
-        <%= message.user.email[/[^@]+/] %>
+        <%= message.user.user_name %>
       </strong>
     <% end %>
     <p>
