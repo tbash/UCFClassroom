@@ -26,35 +26,38 @@ $ vagrant ssh
 ```
 
 #### This is a basic headless VM setup to get you up and running with rails for the project.
-##### Permissions may only be granted to the root user during some steps involving the download of a new ruby version and ruby_build, if this is the case the command `sudo chown -R vagrant.vagrant .rbenv/` may need to be run.
 
 ```bash
-vagrant@vagrant-ubuntu-trusty-64:~$ sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
-vagrant@vagrant-ubuntu-trusty-64:~$ sudo git clone git://github.com/sstephenson/rbenv.git .rbenv
-vagrant@vagrant-ubuntu-trusty-64:~$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-vagrant@vagrant-ubuntu-trusty-64:~$ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-vagrant@vagrant-ubuntu-trusty-64:~$ sudo git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-vagrant@vagrant-ubuntu-trusty-64:~$ echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bash_profile
-vagrant@vagrant-ubuntu-trusty-64:~$ echo "$(<~/.bashrc)" >> ~/.bash_profile
-vagrant@vagrant-ubuntu-trusty-64:~$ echo "gem: --no-ri --no-rdoc" > ~/.gemrc
-vagrant@vagrant-ubuntu-trusty-64:~$ source ~/.bash_profile
-vagrant@vagrant-ubuntu-trusty-64:~$ rbenv install -v 2.2.3
-vagrant@vagrant-ubuntu-trusty-64:~$ rbenv global 2.2.3
-vagrant@vagrant-ubuntu-trusty-64:~$ gem install bundler
-vagrant@vagrant-ubuntu-trusty-64:~$ rbenv rehash
-vagrant@vagrant-ubuntu-trusty-64:~$ sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev libpcre3-dev # hit enter for all pink screen questions, these are in regard to the password setup
+vagrant@dev:~$ sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev g++
+vagrant@dev:~$ sudo git clone git://github.com/sstephenson/rbenv.git .rbenv
+vagrant@dev:~$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+vagrant@dev:~$ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+vagrant@dev:~$ sudo git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+vagrant@dev:~$ echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bash_profile
+vagrant@dev:~$ echo "$(<~/.bashrc)" >> ~/.bash_profile
+vagrant@dev:~$ echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+vagrant@dev:~$ source ~/.bash_profile
+vagrant@dev:~$ sudo chown -R vagrant.vagrant .rbenv/
+vagrant@dev:~$ rbenv install -v 2.2.3
+vagrant@dev:~$ rbenv global 2.2.3
+vagrant@dev:~$ gem install bundler
+vagrant@dev:~$ rbenv rehash
+vagrant@dev:~$ sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev libpcre3-dev # hit enter for all pink screen questions, these are in regard to the password setup
+vagrant@dev:~$ sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 3000
+
 # Starting Redis
-vagrant@vagrant-ubuntu-trusty-64:~$ wget http://download.redis.io/redis-stable.tar.gz
-vagrant@vagrant-ubuntu-trusty-64:~$ tar xvzf redis-stable.tar.gz
-vagrant@vagrant-ubuntu-trusty-64:~$ cd redis-stable
-vagrant@vagrant-ubuntu-trusty-64:~$ make
-vagrant@vagrant-ubuntu-trusty-64:~$ cd /srv/UCFClassroom
-vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ ./bin/setup
+vagrant@dev:~$ wget http://download.redis.io/redis-stable.tar.gz
+vagrant@dev:~$ tar xvzf redis-stable.tar.gz
+vagrant@dev:~$ cd redis-stable
+vagrant@dev:~$ make
+vagrant@dev:~$ cd /srv/UCFClassroom
+vagrant@dev:/srv/UCFClassroom$ ./bin/setup
 # Each of the next three need their own tab/window until we are up with foreman
-vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ ./bin/cable
-vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ redis-server
-vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ ./bin/rails server -b0.0.0.0
+vagrant@dev:/srv/UCFClassroom$ ./bin/cable
+vagrant@dev:/srv/UCFClassroom$ redis-server
+vagrant@dev:/srv/UCFClassroom$ bundle exec rails s
 ```
+#### Now you can visit the app [here](http://dev.ucfclassroom.com/)
 
 #### Note the switch from rails stock server to something that can handle http streaming, [Puma](http://puma.io/)
 
@@ -62,6 +65,7 @@ vagrant@vagrant-ubuntu-trusty-64:/srv/UCFClassroom$ ./bin/rails server -b0.0.0.0
 #### To exit your development environment
 ----------------------------------------------
 ```bash
- vagrant@vagrant-ubuntu-trusty-64:~$ exit
+# ^C will exit your server (control + C)
+ vagrant@dev:~$ exit
  $ vagrant halt # <-- this shuts down the VM
  ```

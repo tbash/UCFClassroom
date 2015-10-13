@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   enum role: [:admin, :student, :instructor]
-  after_initialize :set_role, :if => :new_record?
+  after_initialize :set_role
+  after_initialize :set_user_name
+  has_and_belongs_to_many :courses
   has_many :messages
 
   def set_role
@@ -9,6 +11,10 @@ class User < ActiveRecord::Base
     else
       self.role ||= :student
     end
+  end
+
+  def set_user_name
+    self.user_name = self.email[/[^@]+/]
   end
 
   # Include default devise modules. Others available are:
