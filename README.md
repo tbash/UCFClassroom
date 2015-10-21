@@ -42,20 +42,23 @@ vagrant@dev:~$ rbenv install -v 2.2.3
 vagrant@dev:~$ rbenv global 2.2.3
 vagrant@dev:~$ gem install bundler
 vagrant@dev:~$ rbenv rehash
-vagrant@dev:~$ sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev libpcre3-dev # hit enter for all pink screen questions, these are in regard to the password setup
-vagrant@dev:~$ sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 3000
+vagrant@dev:~$ sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev libpcre3-dev
+# hit enter for all pink screen questions, these are in regard to the password setup
+vagrant@dev:~$ sudo touch /etc/init.d/port_swap
+vagrant@dev:~$ sudo chmod 777 /etc/init.d/port_swap
+vagrant@dev:~$ sudo echo "sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 3000" >> /etc/init.d/port_swap
+vagrant@dev:~$ sudo ln -s /etc/init.d/port_swap /etc/rcS.d/S99port_swap
 
 # Starting Redis
 vagrant@dev:~$ wget http://download.redis.io/redis-stable.tar.gz
 vagrant@dev:~$ tar xvzf redis-stable.tar.gz
 vagrant@dev:~$ cd redis-stable
 vagrant@dev:~$ make
+vagrant@dev:~$ sudo make install
 vagrant@dev:~$ cd /srv/UCFClassroom
 vagrant@dev:/srv/UCFClassroom$ ./bin/setup
 # Each of the next three need their own tab/window until we are up with foreman
-vagrant@dev:/srv/UCFClassroom$ ./bin/cable
-vagrant@dev:/srv/UCFClassroom$ redis-server
-vagrant@dev:/srv/UCFClassroom$ bundle exec rails s
+vagrant@dev:/srv/UCFClassroom$ foreman s
 ```
 #### Now you can visit the app [here](http://dev.ucfclassroom.com/)
 

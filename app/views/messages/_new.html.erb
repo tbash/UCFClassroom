@@ -1,7 +1,7 @@
 <%= simple_form_for [@classroom, Message.new]  do |f| %>
   <div class="panel-footer">
     <div class="input-group">
-      <%= f.search_field :content, label: false, class: 'form-control', type: 'text', placeholder:'uMessage' %>
+      <%= f.search_field :content, label: false, class: 'form-control', type: 'text', placeholder:'uMessage', autocomplete: 'off' %>
       <span class="input-group-btn">
         <%= f.submit "send", class: 'btn btn-warning', type: 'button' %>
       </span>
