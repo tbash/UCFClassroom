@@ -1,8 +1,8 @@
 [![Stories in Ready](https://badge.waffle.io/ucfpoosd9/UCFClassroom.png?label=ready&title=Ready)](https://waffle.io/ucfpoosd9/UCFClassroom)
 
-## UCFClassroom 
+## UCFClassroom
 
-### Rolling with an API first design using Rails 5 
+### Rolling with an API first design using Rails 5
 
 ### Development (api)
 
@@ -13,7 +13,7 @@
 ```sh
 $ cd path/to/projects
 $ git clone git@github.com:ucfpoosd9/UCFClassroom.git
-$ vagrant up 
+$ vagrant up
 $ # allow this to boot your vagrant box
 $ vagrant ssh
 $ cd /srv/UCFClassroom/api
