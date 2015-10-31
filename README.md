@@ -1,3 +1,5 @@
+[![Stories in Ready](https://badge.waffle.io/ucfpoosd9/UCFClassroom.png?label=ready&title=Ready)](https://waffle.io/ucfpoosd9/UCFClassroom)
+
 ## UCFClassroom 
 
 ### Rolling with an API first design using Rails 5 
