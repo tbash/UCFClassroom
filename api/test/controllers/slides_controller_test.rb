@@ -12,7 +12,7 @@ class SlidesControllerTest < ActionController::TestCase
 
   test "should create slide" do
     assert_difference('Slide.count') do
-      post :create, params: { slide: { content: @slide.content, course_id: @slide.course_id } }
+      post :create, params: { slide: { content: @slide.content, course_id: @slide.course_id, course_session: @slide.course_session } }
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class SlidesControllerTest < ActionController::TestCase
   end
 
   test "should update slide" do
-    patch :update, params: { id: @slide, slide: { content: @slide.content, course_id: @slide.course_id } }
+    patch :update, params: { id: @slide, slide: { content: @slide.content, course_id: @slide.course_id, course_session: @slide.course_session } }
     assert_response 200
   end
 
