@@ -1,4 +1,4 @@
 class SlideSerializer < ActiveModel::Serializer
-  attributes :id, :content
+  attributes :id, :course_session, :content
   has_one :course
 end

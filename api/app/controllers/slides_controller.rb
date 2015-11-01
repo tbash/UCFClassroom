@@ -46,6 +46,6 @@ class SlidesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def slide_params
-      params.require(:slide).permit(:content, :course_id)
+      params.require(:slide).permit(:course_session, :content, :course_id)
     end
 end

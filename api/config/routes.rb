@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :slides
   resources :assignments
   resources :messages
   resources :slides
