@@ -2,8 +2,9 @@ class User < ActiveRecord::Base
   enum role: [:admin, :student, :instructor]
   after_initialize :set_role
   after_initialize :set_username
-  # has_and_belongs_to_many :courses
-  # has_many :messages
+  has_many :enrollments
+  has_many :courses, through: :enrollments
+  has_many :messages
   has_secure_password
 
   def set_role

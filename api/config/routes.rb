@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :assignments
+  resources :messages
+  resources :slides
+  resources :courses
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  post '/session',  to: 'sessions#create'
 end
