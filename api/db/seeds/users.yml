@@ -1,0 +1,44 @@
+---
+
+users:
+  
+  - email: tb@knights.ucf.edu
+    first_name: Timothy
+    last_name: Ashley
+    pid: ti123456
+    password: password
+    password_confirmation: password
+  
+  - email: sally@knights.ucf.edu
+    first_name: Sally
+    last_name: Person
+    pid: sa123456
+    password: password
+    password_confirmation: password
+
+  - email: bash@knights.ucf.edu
+    first_name: Brad
+    last_name: Ash
+    pid: br123456
+    password: password
+    password_confirmation: password
+  
+  - email: ash@ucf.edu
+    first_name: Ash
+    last_name: Ketchum
+    pid: as123456
+    password: password
+    password_confirmation: password
+
+  - email: admin@ucf.edu
+    first_name: Admin
+    last_name: User
+    pid: ad123456
+    password: password
+    password_confirmation: password
+    role: 0
+
+enrollments:
+  
+  - user_id: 1
+    courses_id: 1

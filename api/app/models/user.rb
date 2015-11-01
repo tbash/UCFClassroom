@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :enrollments
   has_many :courses, through: :enrollments
   has_many :messages
+  has_many :assignments
   has_secure_password
 
   def set_role

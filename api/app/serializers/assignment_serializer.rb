@@ -1,5 +1,6 @@
 class AssignmentSerializer < ActiveModel::Serializer
-  attributes :id, :title, :type, :due, :grade, :course_id, :student_id
+  attributes :id, :title, :assignment_type, :due, :grade, :course_id, :user_id
   has_one :course
-  has_one :student
+  has_one :user
+  has_many :problems
 end
