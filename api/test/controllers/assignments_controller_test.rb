@@ -12,7 +12,7 @@ class AssignmentsControllerTest < ActionController::TestCase
 
   test "should create assignment" do
     assert_difference('Assignment.count') do
-      post :create, params: { assignment: { course_id: @assignment.course_id, due: @assignment.due, grade: @assignment.grade, student_id: @assignment.student_id, title: @assignment.title, type: @assignment.type } }
+      post :create, params: { assignment: { course_id: @assignment.course_id, due: @assignment.due, grade: @assignment.grade, user_id: @assignment.user_id, title: @assignment.title, type: @assignment.type } }
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class AssignmentsControllerTest < ActionController::TestCase
   end
 
   test "should update assignment" do
-    patch :update, params: { id: @assignment, assignment: { course_id: @assignment.course_id, due: @assignment.due, grade: @assignment.grade, student_id: @assignment.student_id, title: @assignment.title, type: @assignment.type } }
+    patch :update, params: { id: @assignment, assignment: { course_id: @assignment.course_id, due: @assignment.due, grade: @assignment.grade, user_id: @assignment.user_id, title: @assignment.title, type: @assignment.type } }
     assert_response 200
   end
 

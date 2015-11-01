@@ -1,0 +1,20 @@
+---
+
+courses:
+  
+  - name: COP4331C
+    description: |
+                 Processes of Obj Oriented Software Dev
+
+slides:
+  
+  - course_id: 1
+    content: | 
+             ## This is something
+
+assignments:
+  - title: Quiz 1
+    assignment_type: 0
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 1
