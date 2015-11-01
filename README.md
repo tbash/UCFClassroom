@@ -2,13 +2,21 @@
 
 ## UCFClassroom
 
-### Rolling with an API first design using Rails 5
+## Prerequisites
+
+####You will need the following things properly installed on your computer.
+
+* [Git](http://git-scm.com/)
+* [Node.js](http://nodejs.org/) (with NPM)
+* [Bower](http://bower.io/)
+* [Ember CLI](http://www.ember-cli.com/)
+* [PhantomJS](http://phantomjs.org/)
+* [Vagrant](https://www.vagrantup.com/)
+* [Ruby](https://www.ruby-lang.org/)
 
 ### Development (api)
 
-#### Follow these steps to set up initial Dev Environment
-
-* Open up a terminal and run the following:
+* Open up a terminal window and run the following:
 
 ```sh
 $ cd path/to/projects
@@ -27,6 +35,7 @@ $ bin/rails s
 * Open up a terminal and run the following:
 
 ```sh
+$ cd client/
 $ npm install && bower install
 $ ember serve
 ```
