@@ -2,7 +2,7 @@
 
 one:
   title: MyString
-  type: 1
+  assignment_type: 1
   due: 2015-11-01
   grade: 9.99
   course_id: 1
@@ -10,7 +10,7 @@ one:
 
 two:
   title: MyString
-  type: 1
+  assignment_type: 1
   due: 2015-11-01
   grade: 9.99
   course_id: 1
