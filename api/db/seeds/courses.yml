@@ -9,7 +9,7 @@ courses:
 slides:
   
   - course_id: 1
-    content: | 
+    content: > 
              ## This is something
 
 assignments:

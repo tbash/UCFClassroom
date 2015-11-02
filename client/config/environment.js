@@ -2,6 +2,12 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'font-src': "'self' https://fonts.gstatic.com",
+      'connect-src': "'self' http://33.33.33.12:3000/",
+      'img-src': "'self' data:",
+      'style-src': "'self' 'unsafe-inline'",
+    },
     modulePrefix: 'client',
     environment: environment,
     baseURL: '/',
@@ -12,13 +18,21 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
+    
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
   };
 
+  ENV['simple-auth'] = {
+   store: 'simple-auth-session-store:local-storage',
+   authorizer: 'authorizer:custom',
+   crossOriginWhitelist: ['http://33.33.33.12:3000/'],
+   routeAfterAuthentication: '/courses'
+  };
+ 
+  
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
