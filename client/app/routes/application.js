@@ -8,9 +8,6 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     },
     transitionTo(route) {
       this.transitionTo(route);
-    },
-    showCocktail(route) {
-      this.transitionTo('cocktail', route.id);
     }
   }
 });
