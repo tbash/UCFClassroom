@@ -1,13 +1,12 @@
-{{#if session.isAuthenticated}}
-  <span>Logout</span>
-{{else}}
-  <span>Login</span>
-  <span>Signup</span>
-{{/if}}
-<hr>
-<div class="c-notification__container">
-{{#each notifications as |notification|}}
-  {{notification-message notification=notification}}
-{{/each}}
+<div class="menu">
+  <ul>
+  {{#if session.isAuthenticated}}
+     <a id="logout" {{action 'invalidateSession'}}>Logout</a>
+  {{else}}
+     <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+  {{/if}}
+   </ul>
 </div>
-{{outlet}}
+<div class="main">
+  {{outlet}}
+</div>
