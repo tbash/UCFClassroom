@@ -1,6 +1,5 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
-    
     <div class="mdl-layout__header-row">
       <span class="ucf-title mdl-layout-title">
         <img class="logo-image" src="images/logo.png"> UCF Classroom
@@ -11,10 +10,10 @@
       </button>
       <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
         {{#if session.isAuthenticated}}
-           <li class="mdl-menu__item" {{action 'invalidateSession'}}>Logout</li>
+           <li class="mdl-menu__item" {{action 'invalidateSession'}}>logout</li>
         {{else}}
-           <li class="mdl-menu__item" {{action 'transitionTo' 'login'}}>Login</li>
-           <li class="mdl-menu__item" {{action 'transitionTo' 'signup'}}>Signup</li>
+           <li class="mdl-menu__item" {{action 'transitionTo' 'login'}}>login</li>
+           <li class="mdl-menu__item" {{action 'transitionTo' 'signup'}}>signup</li>
         {{/if}}
       </ul>
     </div>
