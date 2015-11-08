@@ -2,11 +2,10 @@
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <div class="mdl-layout-spacer"></div>
-      <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+      <button id="more-button" class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect">
         <i class="material-icons">more_vert</i>
       </button>
-
-      <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
         {{#if session.isAuthenticated}}
            <li class="mdl-menu__item" {{action 'invalidateSession'}}>Logout</li>
         {{else}}
