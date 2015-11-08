@@ -1,17 +1,28 @@
-<div class="menu">
-  <ul>
-  {{#if session.isAuthenticated}}
-     <a id="logout" {{action 'invalidateSession'}}>Logout</a>
-  {{else}}
-     <li>{{#link-to 'login'}}Login{{/link-to}}</li>
-  {{/if}}
-   </ul>
-</div>
-<div class="main">
-  <div class="c-notification__container">
-  {{#each notifications as |notification|}}
-    {{notification-message notification=notification}}
-  {{/each}}
-  </div> 
-  {{outlet}}
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <div class="mdl-layout-spacer"></div>
+      <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">more_vert</i>
+      </button>
+
+      <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+        {{#if session.isAuthenticated}}
+           <li class="mdl-menu__item" {{action 'invalidateSession'}}>Logout</li>
+        {{else}}
+           <li class="mdl-menu__item" {{action 'transitionTo' 'login'}}>Login</li>
+        {{/if}}
+      </ul>
+    </div>
+    <div class="c-notification__container">
+    {{#each notifications as |notification|}}
+      {{notification-message notification=notification}}
+    {{/each}}
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      {{outlet}}
+    </div>
+  </main>
 </div>
