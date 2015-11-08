@@ -1,6 +1,10 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
+    
     <div class="mdl-layout__header-row">
+      <span class="ucf-title mdl-layout-title">
+        <img class="logo-image" src="images/logo.png"> UCF Classroom
+      </span>
       <div class="mdl-layout-spacer"></div>
       <button id="more-button" class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect">
         <i class="material-icons">more_vert</i>
@@ -10,6 +14,7 @@
            <li class="mdl-menu__item" {{action 'invalidateSession'}}>Logout</li>
         {{else}}
            <li class="mdl-menu__item" {{action 'transitionTo' 'login'}}>Login</li>
+           <li class="mdl-menu__item" {{action 'transitionTo' 'signup'}}>Signup</li>
         {{/if}}
       </ul>
     </div>
