@@ -1,12 +1,35 @@
-<h3>Signup</h3>
-<form {{action 'authenticate' on='submit'}}>
-  <div class="form-group">
-    <label for="name">Login</label>
-    {{input value=name placeholder='Enter Login' class='form-control'}}
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    {{input value=password placeholder='Enter Password' class='form-control' type='password'}}
-  </div>
-  <button type="submit" class="btn btn-default">Login</button>
-</form>
+<div class="mdl-layout__tab-panel is-active" id="overview">
+  <section class="section--center--login mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <div class="mdl-card mdl-cell mdl-cell--12-col">
+      <div class="mdl-card__supporting-text">
+        <h4>signup</h4>
+      </div>
+      {{paper-input label="email" value=email}}
+      {{paper-input label="password" type="password" value=password}}
+      {{paper-input label="password confirmation" type="password" value=password_confirmation}}
+      <div class="mdl-card__actions">
+      {{#if email}}
+        {{#if password}}
+          {{#if password_confirmation}}
+            <a class="mdl-button mdl-button--raised mdl-js-button" {{action 'create'}}>
+              login
+            </a>
+          {{else}}
+            <a class="mdl-button mdl-button--raised mdl-js-button" disabled>
+              login
+            </a>
+          {{/if}}
+        {{else}}
+         <a class="mdl-button mdl-button--raised mdl-js-button" disabled>
+           login
+         </a>
+       {{/if}}
+      {{else}}
+        <a class="mdl-button mdl-button--raised mdl-js-button" disabled>
+          login
+        </a>
+      {{/if}}
+      </div>
+    </div>
+  </section>
+</div>

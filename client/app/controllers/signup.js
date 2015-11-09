@@ -5,14 +5,23 @@ export default Ember.Controller.extend({
 
   actions: {
     create: function() {
-      var nameRegex = /^[a-z0-9_-]{1,16}$/;
+      // TODO create emailRegex
+      var emailRegex = /\A([\w\.%\+\-]+)(@knights\.ucf\.edu\z)|(@ucf\.edu\z)/i;
       var passwordRegex = /^[A-Za-z0-9_-]{8,18}$/;
-      var name = this.get('name').toLowerCase();
+      var email = this.get('email').toLowerCase();
       var password = this.get('password');
       var password_confirmation = this.get('password_confirmation');
-      if (nameRegex.test(name) === false || passwordRegex.test(password) === false) {
+      if (passwordRegex.test(password) === false) {
         this.notifications.addNotification({
-          message: 'letters, numbers, underscores, or hyphens only please',
+          message: 'password is not valid',
+          type: 'error',
+          autoClear: true,
+          clearDuration: 4000
+        });
+      }
+      if (emailRegex.test(email) === false) {
+        this.notifications.addNotification({
+          message: 'you need a valid UCF email to register',
           type: 'error',
           autoClear: true,
           clearDuration: 4000
@@ -28,15 +37,15 @@ export default Ember.Controller.extend({
       }
       else {
         var user = this.store.createRecord('user', {
-          name: name,
+          email: email,
           password: password,
           password_confirmation: password_confirmation
         });
         var self = this;
         user.save().then(function() {
-          self.get('session').authenticate('authenticator:custom', name, password).then(function(){
+          self.get('session').authenticate('authenticator:custom', email.substring(0, email.indexOf('@')), password).then(function(){
             self.notifications.addNotification({
-              message: 'you have successfully signed up as ' + name,
+              message: 'you have successfully signed up with ' + email,
               type: 'success',
               autoClear: true,
               clearDuration: 3000
@@ -44,11 +53,11 @@ export default Ember.Controller.extend({
           });
           }, function(error) {
             self.notifications.addNotification({
-              message: 'that username already exists',
+              message: 'that email is already in use',
               type: 'error',
               autoClear: true,
               clearDuration: 3000
-            });
+          });
         });
       }
     }
