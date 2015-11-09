@@ -1,5 +1,7 @@
-@import 'bower_components/font-awesome/scss/font-awesome';
+@import '_variables';
 @import 'bower_components/material-design-lite/src/material-design-lite';
+@import 'bower_components/font-awesome/scss/font-awesome';
+@import 'ember-paper';
 
 .mdl-layout-title {
   position: relative;
@@ -7,4 +9,17 @@
 
 .logo-image {
   height: 50px;
+}
+
+section.section--center {
+    max-width: 860px;
+}
+
+section.section--center--login {
+    max-width: 500px;
+}
+
+.mdl-layout__tab-panel {
+  padding: 8px;
+  padding-top: 48px;
 }
