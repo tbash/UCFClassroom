@@ -8,6 +8,7 @@ unless Rails.env.production?
   Course.create(courses_config["courses"])
   Slide.create(courses_config["slides"])
   Assignment.create(courses_config["assignments"])
+  Message.create(courses_config["messages"])
 
   users_config["enrollments"].each do |enroll|
     User.find(enroll["user_id"].to_i).courses << Course.find(enroll["courses_id"].to_i)

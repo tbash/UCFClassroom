@@ -9,12 +9,52 @@ courses:
 slides:
   
   - course_id: 1
-    content: > 
+    course_session: 1
+    content: | 
              ## This is something
+  - course_id: 1
+    course_session: 1
+    content: | 
+             ## This is something
+             ### This is sub something
+             * This is a point for that and still should be hashed
+             ```
+             # this is a code block
+             def print_line
+               puts "i hope this hashes lol "
+             end
+             ```
+
+  - course_id: 1
+    course_session: 1
+    content: | 
+             ## This is something
+             ### This is sub something
+             * This is a point for that and still should be hashed
+             ```
+             # this is a code block
+             def print_line
+               puts " "
+             end
+             ```
 
 assignments:
+
   - title: Quiz 1
     assignment_type: 0
     due: 2001-09-28 03:00:00
     grade: 100.00
+    course_id: 1
+
+messages: 
+
+  - body: >
+          yo teach i've got some questions! 
+          what the hell is peer-to-peer?
+    user_id: 1
+    course_id: 1
+
+  - body: >
+          Yeah, what the hell is peer-to-peer?
+    user_id: 2
     course_id: 1

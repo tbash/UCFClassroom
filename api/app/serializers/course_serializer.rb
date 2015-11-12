@@ -4,4 +4,5 @@ class CourseSerializer < ActiveModel::Serializer
   has_many :users
   has_many :slides
   has_many :assignments
+  has_many :messages
 end
