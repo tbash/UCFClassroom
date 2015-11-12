@@ -2,7 +2,7 @@
   {{#paper-content class="md-whiteframe-z1"}}
     {{#paper-list}}
       {{#paper-subheader class="md-no-sticky"}}Courses{{/paper-subheader}}
-      {{#each course in model}}
+      {{#each model as |course|}}
       {{paper-divider}}
       {{#paper-item}}
         <p>{{course.name}}</p>

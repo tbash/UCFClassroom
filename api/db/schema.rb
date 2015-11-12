@@ -44,11 +44,14 @@ ActiveRecord::Schema.define(version: 20151101070258) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.string   "username"
-    t.integer  "course_id"
     t.text     "body"
+    t.string   "username"
+    t.integer  "user_id"
+    t.integer  "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_messages_on_course_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "problems", force: :cascade do |t|
@@ -89,6 +92,8 @@ ActiveRecord::Schema.define(version: 20151101070258) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
+  add_foreign_key "messages", "courses"
+  add_foreign_key "messages", "users"
   add_foreign_key "problems", "assignments"
   add_foreign_key "slides", "courses"
 end
