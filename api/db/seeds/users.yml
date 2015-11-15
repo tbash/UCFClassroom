@@ -48,3 +48,6 @@ enrollments:
 
   - user_id: 3
     courses_id: 1
+
+  - user_id: 4
+    courses_id: 1
