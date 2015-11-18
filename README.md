@@ -8,9 +8,6 @@
 
 * [Git](http://git-scm.com/)
 * [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
 * [Ruby](https://www.ruby-lang.org/)
 * [Vagrant](https://www.vagrantup.com/)
 
@@ -36,6 +33,6 @@ $ bin/rails s
 
 ```sh
 $ cd client/
-$ npm install && bower install
-$ ember serve
+$ npm install
+$ npm start
 ```
