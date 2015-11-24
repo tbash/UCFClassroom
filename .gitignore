@@ -1,3 +1,11 @@
 /.vagrant
 *.swp
 .DS_Store
+client/node_modules
+client/public/bundle.js
+npm-debug.log
+api/.bundle
+api/log/*
+api/tmp/*
+!api/log/.keep
+!api/tmp/.keep
