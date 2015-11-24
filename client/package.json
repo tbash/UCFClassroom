@@ -1,10 +1,8 @@
 {
-  "name": "react-router",
+  "name": "classroom-client",
   "version": "1.0.0",
-  "description": "A complete routing library for React.js",
+  "description": "React.js client",
   "files": [
-    "*.md",
-    "docs",
     "es6",
     "lib",
     "npm-scripts",
@@ -14,10 +12,10 @@
   "jsnext:main": "es6/index",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rackt/react-router.git"
+    "url": "https://github.com/ucfpoosd9/UCFClassroom.git"
   },
-  "homepage": "https://rackt.github.io/react-router/",
-  "bugs": "https://github.com/rackt/react-router/issues",
+  "homepage": "https://ucfpoosd9.github.io/",
+  "bugs": "https://github.com/ucfpoosd9/UCFClassroom/issues",
   "scripts": {
     "build": "npm run build-cjs && npm run build-es6",
     "build-cjs": "rimraf lib && babel ./modules -d lib --ignore '__tests__'",
@@ -32,8 +30,7 @@
     "postinstall": "node ./npm-scripts/postinstall.js"
   },
   "authors": [
-    "Ryan Florence",
-    "Michael Jackson"
+    "teebash"
   ],
   "license": "MIT",
   "dependencies": {
@@ -84,15 +81,12 @@
     "webpack-dev-middleware": "^1.2.0"
   },
   "tags": [
-    "react",
-    "router"
+    "ucf",
+    "client",
+    "react"
   ],
   "keywords": [
-    "react",
-    "react-component",
-    "routing",
-    "route",
-    "routes",
-    "router"
+    "UCF",
+    "React"
   ]
 }
