@@ -1,20 +1,41 @@
 ---
 
 courses:
-  
+
   - name: COP4331C
     description: |
                  Processes of Obj Oriented Software Dev
 
+  - name: COT4020
+    description: |
+                 Programming Languages I
+
+  - name: CDA5106
+    description: |
+                 Computer Architecture II
+
+  - name: SPN2001
+    description: |
+                 Exploring With Dora
+
+  - name: MAC2313
+    description: |
+                 Calculus III
+
+  - name: MAC2314
+    description: |
+                 Calculus IV
+
 slides:
-  
+
   - course_id: 1
     course_session: 1
-    content: | 
+    content: |
              ## This is something
+
   - course_id: 1
     course_session: 1
-    content: | 
+    content: |
              ## This is something
              ### This is sub something
              * This is a point for that and still should be hashed
@@ -27,7 +48,7 @@ slides:
 
   - course_id: 1
     course_session: 1
-    content: | 
+    content: |
              ## This is something
              ### This is sub something
              * This is a point for that and still should be hashed
@@ -38,6 +59,55 @@ slides:
              end
              ```
 
+  - course_id: 4
+    course_session: 1
+    content: |
+           ## I am Professor Dora
+
+  - course_id: 4
+    course_session: 1
+    content: |
+             ## Soy dora profesor
+
+  - course_id: 4
+    course_session: 1
+    content: |
+             ## This is the map
+
+  - course_id: 4
+    course_session: 1
+    content: |
+             ## Este es el mapa
+
+  - course_id: 4
+    course_session: 1
+    content: |
+             ## This is my monkey, Boots
+
+  - course_id: 4
+    course_session: 1
+    content: |
+             ## Esta es mi mono, botas
+
+  - course_id: 1
+    course_session: 1
+    content: |
+             ## Boots is your T.A. for the course
+
+  - course_id: 1
+    course_session: 1
+    content: |
+             ## Botas es su asistente de enseñanza para el curso
+
+  - course_id: 1
+    course_session: 1
+    content: |
+             ## Say backpack!
+  - course_id: 1
+    course_session: 1
+    content: |
+             ## Diga mochila
+
 assignments:
 
   - title: Quiz 1
@@ -46,10 +116,28 @@ assignments:
     grade: 100.00
     course_id: 1
 
-messages: 
+  - title: Big Tree Mountain
+    assignment_type: 3
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 4
+
+  - title: Spooky River
+    assignment_type: 4
+    due: 2001-10-15 03:00:00
+    grade: 100.00
+    course_id: 4
+
+  - title: ¿Por que no las dos?
+    assignment_type: 4
+    due: 2001-12-8 03:00:00
+    grade: 100.00
+    course_id: 1
+
+messages:
 
   - body: >
-          yo teach i've got some questions! 
+          yo teach i've got some questions!
           what the hell is peer-to-peer?
     user_id: 1
     course_id: 1
@@ -58,3 +146,32 @@ messages:
           Yeah, what the hell is peer-to-peer?
     user_id: 2
     course_id: 1
+
+  - body: >
+          When do we get to challenge the Elite 4?
+    user_id: 7
+    course_id: 2
+
+  - body: >
+          You'll have to collect all the badges first, loser. Smell ya later
+    user_id: 6
+    course_id: 2
+
+  - body: >
+          Fight  PKMN
+          [Bag]    Run
+    user_id: 7
+    course_id: 2
+
+  - body: >
+          Old Rod
+          Secret Key
+          [Bicycle]
+          Pokeflute
+    user_id: 7
+    course_id: 2
+
+  - body: >
+          THIS ISN'T THE TIME TO USE THAT!!!
+    user_id: 4
+    course_id: 2
