@@ -3,7 +3,7 @@
 .DS_Store
 classroom.ucf.edu/node_modules
 npm-debug.log
-classroom.ucf.edu/dist
+classroom.ucf.edu/dist/bundle.*
 npm-debug.log
 api/.bundle
 api/log/*
