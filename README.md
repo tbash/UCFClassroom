@@ -8,9 +8,6 @@
 
 * [Git](http://git-scm.com/)
 * [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
 * [Ruby](https://www.ruby-lang.org/)
 * [Vagrant](https://www.vagrantup.com/)
 
@@ -24,6 +21,11 @@ $ git clone git@github.com:ucfpoosd9/UCFClassroom.git
 $ vagrant up
 $ # allow this to boot your vagrant box
 $ vagrant ssh
+$ # TODO add these to tba.sh
+$ sudo touch /etc/init.d/port_swap
+$ sudo chmod 777 /etc/init.d/port_swap
+$ sudo echo "sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8000" >> /etc/init.d/port_swap
+$ sudo ln -s /etc/init.d/port_swap /etc/rcS.d/S99port_swap
 $ cd /srv/UCFClassroom/api
 $ bundle
 $ # allow bundler to install the gems
@@ -36,6 +38,6 @@ $ bin/rails s
 
 ```sh
 $ cd client/
-$ npm install && bower install
-$ ember serve
+$ npm install
+$ npm start
 ```

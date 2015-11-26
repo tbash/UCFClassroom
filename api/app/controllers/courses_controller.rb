@@ -1,10 +1,15 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :update, :destroy]
+  before_action :set_user
 
   # GET /courses
   def index
-    @courses = Course.all
-
+    if @user.admin?
+      @courses = Course.all
+    else
+      @courses = @user.courses
+    end
+    
     render json: @courses
   end
 
@@ -42,6 +47,12 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])
+    end
+    
+    # Uses the headers from the request and parses the auth token form this to find the current
+    # user based on this as they are unique
+    def set_user
+      @user = User.find_by(authentication_token: headers[:access_token])
     end
 
     # Only allow a trusted parameter "white list" through.
