@@ -4,7 +4,7 @@ import 'isomorphic-fetch'
 
 // TODO set to 0.0.0.0:3000 when in prod or demo
 // make conditional for this
-const API_ROOT = '33.33.33.12:3000/'
+const API_ROOT = 'http://33.33.33.12:3000/'
 
 // Fetches an API response and normalizes the result JSON according to schema.
 // This makes every API response have the same shape, regardless of how nested it was.

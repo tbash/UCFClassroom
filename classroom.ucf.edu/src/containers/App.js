@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { pushState } from 'redux-router'
-import Explore from '../components/Explore'
+import Navbar from '../components/Navbar'
 import { resetErrorMessage } from '../actions'
 
 class App extends Component {
@@ -42,9 +42,8 @@ class App extends Component {
     const { children, inputValue } = this.props
     return (
       <div>
-        <Explore value={inputValue}
+        <Navbar value={inputValue}
                  onChange={this.handleChange} />
-        <hr />
         {this.renderErrorMessage()}
         {children}
       </div>
