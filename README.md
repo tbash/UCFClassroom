@@ -21,6 +21,10 @@ $ git clone git@github.com:ucfpoosd9/UCFClassroom.git
 $ vagrant up
 $ # allow this to boot your vagrant box
 $ vagrant ssh
+$ sudo touch /etc/init.d/port_swap
+$ sudo chmod 777 /etc/init.d/port_swap
+$ sudo echo "sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8000" >> /etc/init.d/port_swap
+$ sudo ln -s /etc/init.d/port_swap /etc/rcS.d/S99port_swap
 $ cd /srv/UCFClassroom/api
 $ bundle
 $ # allow bundler to install the gems

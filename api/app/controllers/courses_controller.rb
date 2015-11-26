@@ -7,9 +7,9 @@ class CoursesController < ApplicationController
     if @user.admin?
       @courses = Course.all
     else
-      @courses = @user.enrollments.each {|e| courses << e.course}
+      @courses = @user.courses
     end
-
+    
     render json: @courses
   end
 

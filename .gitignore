@@ -1,8 +1,9 @@
 /.vagrant
 *.swp
 .DS_Store
-client/node_modules
-client/public/bundle.js
+classroom.ucf.edu/node_modules
+npm-debug.log
+classroom.ucf.edu/dist
 npm-debug.log
 api/.bundle
 api/log/*
