@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:current_user, :update, :destroy]
 
   # GET /users
   def index
-    
     @users = User.all
 
     render json: @users
   end
 
-  # GET /users/1
-  def show
+  # GET /user
+  def current_user 
     render json: @user
   end
 
@@ -42,9 +41,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      # TODO after testing this will be the way to fetch current user
-      # @user = User.find_by(authentication_token: request.headers['HTTP_API_KEY'])
-      @user = User.find(params[:id])
+      @user = User.find_by(authentication_token: headers[:auth_token])
     end
 
     # Only allow a trusted parameter "white list" through.
