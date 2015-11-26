@@ -78,12 +78,12 @@ function mapStateToProps(state) {
 
   const title = `${username}/${name}`
   const usersPagination = usersByCourse[name] || { ids: [] }
-  const users = usersPagination.ids.map(id => users[id])
+  const allUsers = usersPagination.ids.map(id => users[id])
 
   return {
     title,
     name,
-    users,
+    allUsers,
     usersPagination,
     course: courses[name]
   }
