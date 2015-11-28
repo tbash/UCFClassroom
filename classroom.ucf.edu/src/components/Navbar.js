@@ -1,6 +1,29 @@
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 
-export default class Explore extends Component {
+const dark = 'hsl(200, 20%, 20%)'
+const light = '#fff'
+const styles = {}
+
+styles.wrapper = {
+  overflow: 'hidden',
+  background: dark,
+  color: light
+}
+
+styles.link = {
+  padding: 11,
+  color: light,
+  fontWeight: 200
+}
+
+styles.activeLink = {
+  ...styles.link,
+  background: light,
+  color: dark
+}
+
+export default class Navbar extends Component {
   constructor(props) {
     super(props)
     this.handleKeyUp = this.handleKeyUp.bind(this)
@@ -36,22 +59,21 @@ export default class Explore extends Component {
 
   render() {
     return (
-      <div>
-        <p>This is so nav-tastic!</p>
-        <input size="45"
-               ref="input"
-               defaultValue={this.props.value}
-               onKeyUp={this.handleKeyUp} />
-        <button onClick={this.handleGoClick}>
-          Go!
-        </button>
-        <hr />
+      <div style={styles.wrapper}>
+        <div style={{ float: 'left' }}>
+          <Link to="/" style={styles.link}>Home</Link>{' '}
+          <Link to="/courses" style={styles.link} activeStyle={styles.activeLink}>Courses</Link>{' '}
+          <Link to="/" style={styles.link} activeStyle={styles.activeLink}>Assignments</Link>{' '}
+        </div>
+        <div style={{ float: 'right' }}>
+          Username
+        </div>
       </div>
     )
   }
 }
 
-Explore.propTypes = {
+Navbar.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired
 }
