@@ -24,7 +24,7 @@ class Enrollment < ActiveRecord::Base
     end
     grade = mean(base) * 0.2 + mean(quiz) * 0.2 + mean(midterm) * 0.3 + mean(final) * 0.3
     byebug
-    self.course_grade = grade.to_f unless grade.nil?
+    self.course_grade = grade unless grade.nil?
   end
 
   def sum arr
