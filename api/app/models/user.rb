@@ -1,10 +1,15 @@
 class User < ActiveRecord::Base
-  after_initialize :set_role, :set_username
+  after_initialize :set_role
+  after_initialize :set_username
   has_many :enrollments
   has_many :courses, through: :enrollments
   has_many :messages
   has_many :assignments
-  validates_uniqueness_of :authentication_token, :username, :email
+  validates_presence_of :email
+  validates_presence_of :nid
+  validates_uniqueness_of :authentication_token, allow_nil: true
+  validates_uniqueness_of :username
+  validates_uniqueness_of :email
   has_secure_password
   enum role: [:admin, :student, :instructor]
 
