@@ -115,24 +115,49 @@ assignments:
     due: 2001-09-28 03:00:00
     grade: 100.00
     course_id: 1
+    user_id: 1
+
+  - title: Quiz 1
+    assignment_type: 0
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 1
+    user_id: 2
+
+  - title: Quiz 2
+    assignment_type: 1
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 1
+    user_id: 1
+
+  - title: Quiz 2
+    assignment_type: 1
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 1
+    user_id: 2
+
+  - title: Quiz 1
+    assignment_type: 0
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 1
+    user_id: 3
+
+  - title: Quiz 1
+    assignment_type: 0
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 1
+    user_id: 4
 
   - title: Big Tree Mountain
     assignment_type: 3
     due: 2001-09-28 03:00:00
     grade: 100.00
     course_id: 4
-
-  - title: Spooky River
-    assignment_type: 4
-    due: 2001-10-15 03:00:00
-    grade: 100.00
-    course_id: 4
-
-  - title: ¿Por que no las dos?
-    assignment_type: 4
-    due: 2001-12-8 03:00:00
-    grade: 100.00
-    course_id: 1
+    user_id: 1
 
 messages:
 
