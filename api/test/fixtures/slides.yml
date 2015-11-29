@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  course_session: 1
+  order_no: 1
   content: MyText
-  course: 
+  slide_container: 
 
 two:
-  course_session: 1
+  order_no: 1
   content: MyText
-  course: 
+  slide_container: 

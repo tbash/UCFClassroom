@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101070258) do
+ActiveRecord::Schema.define(version: 20151129151030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,8 +32,9 @@ ActiveRecord::Schema.define(version: 20151101070258) do
     t.string   "description"
     t.string   "schedule"
     t.integer  "instructor_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "course_session_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "enrollments", force: :cascade do |t|
@@ -60,20 +61,29 @@ ActiveRecord::Schema.define(version: 20151101070258) do
     t.string   "question"
     t.string   "student_answer"
     t.string   "correct_answer"
-    t.integer  "type"
+    t.integer  "problem_type"
+    t.boolean  "correct"
     t.integer  "assignment_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["assignment_id"], name: "index_problems_on_assignment_id", using: :btree
   end
 
-  create_table "slides", force: :cascade do |t|
-    t.integer  "course_session"
-    t.text     "content"
+  create_table "slide_containers", force: :cascade do |t|
+    t.integer  "course_session_id"
     t.integer  "course_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["course_id"], name: "index_slides_on_course_id", using: :btree
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["course_id"], name: "index_slide_containers_on_course_id", using: :btree
+  end
+
+  create_table "slides", force: :cascade do |t|
+    t.integer  "order_no"
+    t.text     "content"
+    t.integer  "slide_container_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["slide_container_id"], name: "index_slides_on_slide_container_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -96,5 +106,6 @@ ActiveRecord::Schema.define(version: 20151101070258) do
   add_foreign_key "messages", "courses"
   add_foreign_key "messages", "users"
   add_foreign_key "problems", "assignments"
-  add_foreign_key "slides", "courses"
+  add_foreign_key "slide_containers", "courses"
+  add_foreign_key "slides", "slide_containers"
 end

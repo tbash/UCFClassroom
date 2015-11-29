@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
   validates_uniqueness_of :email
   has_secure_password
-  enum role: [:admin, :student, :instructor]
+  enum role: [:student, :instructor, :admin]
 
   def set_role
     if self.email.match(/\A([\w\.%\+\-]+)(@ucf\.edu\z)/i)
