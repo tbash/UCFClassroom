@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find_by(authentication_token: headers[:auth_token])
+      @user = User.find_by(authentication_token: headers[:access_token])
     end
 
     # Only allow a trusted parameter "white list" through.

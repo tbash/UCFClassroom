@@ -6,8 +6,10 @@ unless Rails.env.production?
   courses_seed_file = File.join(Rails.root, 'db','seeds', 'courses.yml')
   courses_config = YAML::load_file(courses_seed_file)
   Course.create(courses_config["courses"])
+  SlideContainer.create(courses_config["slide_containers"])
   Slide.create(courses_config["slides"])
   Assignment.create(courses_config["assignments"])
+  Problem.create(courses_config["problems"])
 
   users_config["enrollments"].each do |enroll|
     user = User.find(enroll["user_id"].to_i)

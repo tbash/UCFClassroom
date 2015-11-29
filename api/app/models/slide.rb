@@ -1,3 +1,3 @@
 class Slide < ActiveRecord::Base
-  belongs_to :course
+  belongs_to :slide_container
 end

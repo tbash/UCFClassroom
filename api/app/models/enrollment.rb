@@ -10,20 +10,20 @@ class Enrollment < ActiveRecord::Base
     midterm = []
     final   = []
     assignments.each do |assignment|
-      case assignment.assignment_type
-        when "base"
-          base << assignment.grade.to_f unless assignment.grade.nil?
-        when "quiz"
-          quiz << assignment.grade.to_f unless assignment.grade.nil?
-        when "midterm"
-          midterm << assignment.grade.to_f unless assignment.grade.nil?
-        when "final"
-          final << assignment.grade.to_f unless assignment.grade.nil?
-        else
+      unless assignment.grade.nil?
+        case assignment.assignment_type
+          when "base"
+            base << assignment.grade.to_f
+          when "quiz"
+            quiz << assignment.grade.to_f
+          when "midterm"
+            midterm << assignment.grade.to_f
+          when "final"
+            final << assignment.grade.to_f
+        end
       end
     end
     grade = mean(base) * 0.2 + mean(quiz) * 0.2 + mean(midterm) * 0.3 + mean(final) * 0.3
-    byebug
     self.course_grade = grade unless grade.nil?
   end
 

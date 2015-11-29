@@ -29,6 +29,11 @@ class CoursesController < ApplicationController
     end
   end
 
+  # POST /courses/1/new_message
+  def create_message
+    @course.messages.creat(course_params[:message])
+  end
+
   # PATCH/PUT /courses/1
   def update
     if @course.update(course_params)
@@ -40,7 +45,9 @@ class CoursesController < ApplicationController
 
   # DELETE /courses/1
   def destroy
-    @course.destroy
+    if @user.admin?
+      @course.destroy
+    end
   end
 
   private
@@ -57,6 +64,6 @@ class CoursesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def course_params
-      params.require(:course).permit(:name, :description, :instructor_id)
+      params.require(:course).permit(:name, :description, :instructor_id, :course_session_id, :message => [:user_id, :content])
     end
 end
