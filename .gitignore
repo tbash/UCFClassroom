@@ -1,3 +1,11 @@
 /.vagrant
 *.swp
 .DS_Store
+classroom.ucf.edu/node_modules
+classroom.ucf.edu/dist/bundle.*
+npm-debug.log
+api/.bundle
+api/log/*
+api/tmp/*
+!api/log/.keep
+!api/tmp/.keep

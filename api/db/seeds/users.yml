@@ -5,35 +5,35 @@ users:
   - email: tb@knights.ucf.edu
     first_name: Timothy
     last_name: Ashley
-    pid: ti123456
+    nid: ti123456
     password: password
     password_confirmation: password
 
   - email: sally@knights.ucf.edu
     first_name: Sally
     last_name: Person
-    pid: sa123456
+    nid: sa123456
     password: password
     password_confirmation: password
 
   - email: bash@knights.ucf.edu
     first_name: Brad
     last_name: Ash
-    pid: br123456
+    nid: br123456
     password: password
     password_confirmation: password
 
   - email: ProfOak@ucf.edu
     first_name: Professor
     last_name: Oak
-    pid: Pr123456
+    nid: Pr123456
     password: password
     password_confirmation: password
 
   - email: admin@ucf.edu
     first_name: Admin
     last_name: User
-    pid: ad123456
+    nid: ad123456
     password: password
     password_confirmation: password
     role: 0
@@ -41,28 +41,28 @@ users:
   - email: Gary@knight.ucf.edu
     first_name: Gary
     last_name: Oak
-    pid: ga123456
+    nid: ga123456
     password: password
     password_confirmation: password
 
   - email: ash@knights.ucf.edu
     first_name: Ash
     last_name: Ketchum
-    pid: as123456
+    nid: as123456
     password: password
     password_confirmation: password
 
   - email: Dora@ucf.edu
     first_name: Dora
     last_name: Explorer
-    pid: do123456
+    nid: do123456
     password: password
     password_confirmation: password
 
   - email: Professorteacher@ucf.edu
     first_name: Professor
     last_name: Teacher
-    pid: pt123456
+    nid: pt123456
     password: password
     password_confirmation: password
 
@@ -98,16 +98,16 @@ enrollments:
   - user_id: 6
     courses_id: 3
 
-  - user_id: 2
+  - user_id: 1
     courses_id: 3
 
-  - user_id: 3
+  - user_id: 1
     courses_id: 4
 
   - user_id: 4
     courses_id: 4
 
-  - user_id: 2
+  - user_id: 3
     courses_id: 4
 
   - user_id: 6

@@ -26,17 +26,13 @@ courses:
     description: |
                  Calculus IV
 
-
-
-
-
-
 slides:
 
   - course_id: 1
     course_session: 1
     content: |
              ## This is something
+
   - course_id: 1
     course_session: 1
     content: |
@@ -63,56 +59,54 @@ slides:
              end
              ```
 
-- course_id: 4
-  course_session: 1
-  content: |
+  - course_id: 4
+    course_session: 1
+    content: |
            ## I am Professor Dora
 
-- course_id: 4
-  course_session: 1
-  content: |
-           ## Soy dora profesor
+  - course_id: 4
+    course_session: 1
+    content: |
+             ## Soy dora profesor
 
-- course_id: 4
-  course_session: 1
-  content: |
-           ## This is the map
+  - course_id: 4
+    course_session: 1
+    content: |
+             ## This is the map
 
-- course_id: 4
-  course_session: 1
-  content: |
-           ## Este es el mapa
+  - course_id: 4
+    course_session: 1
+    content: |
+             ## Este es el mapa
 
-- course_id: 4
-  course_session: 1
-  content: |
-           ## This is my monkey, Boots
+  - course_id: 4
+    course_session: 1
+    content: |
+             ## This is my monkey, Boots
 
-- course_id: 4
-  course_session: 1
-  content: |
-           ## Esta es mi mono, botas
+  - course_id: 4
+    course_session: 1
+    content: |
+             ## Esta es mi mono, botas
 
-- course_id: 1
-  course_session: 1
-  content: |
-           ## Boots is your T.A. for the course
-- course_id: 1
-  course_session: 1
-  content: |
-           ## Botas es su asistente de enseñanza para el curso
+  - course_id: 1
+    course_session: 1
+    content: |
+             ## Boots is your T.A. for the course
 
-- course_id: 1
-  course_session: 1
-  content: |
-           ## Say backpack!
-- course_id: 1
-  course_session: 1
-  content: |
-           ## Diga mochila
+  - course_id: 1
+    course_session: 1
+    content: |
+             ## Botas es su asistente de enseñanza para el curso
 
-
-
+  - course_id: 1
+    course_session: 1
+    content: |
+             ## Say backpack!
+  - course_id: 1
+    course_session: 1
+    content: |
+             ## Diga mochila
 
 assignments:
 
@@ -121,24 +115,49 @@ assignments:
     due: 2001-09-28 03:00:00
     grade: 100.00
     course_id: 1
+    user_id: 1
 
-- title: Big Tree Mountain
-  assignment_type: 3
-  due: 2001-09-28 03:00:00
-  grade: 100.00
-  course_id: 4
+  - title: Quiz 1
+    assignment_type: 0
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 1
+    user_id: 2
 
-- title: Spooky River
-  assignment_type: 4
-  due: 2001-10-15 03:00:00
-  grade: 100.00
-  course_id: 4
+  - title: Quiz 2
+    assignment_type: 1
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 1
+    user_id: 1
 
-- title: ¿Por que no las dos?
-  assignment_type: 5
-  due: 2001-12-8 03:00:00
-  grade: 100.00
-  course_id: 1
+  - title: Quiz 2
+    assignment_type: 1
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 1
+    user_id: 2
+
+  - title: Quiz 1
+    assignment_type: 0
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 1
+    user_id: 3
+
+  - title: Quiz 1
+    assignment_type: 0
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 1
+    user_id: 4
+
+  - title: Big Tree Mountain
+    assignment_type: 3
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 4
+    user_id: 1
 
 messages:
 
