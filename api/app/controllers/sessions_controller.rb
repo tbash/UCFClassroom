@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def create
-    @user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
+    @user = User.find_by(nid: params[:nid]).try(:authenticate, params[:password])
 
     if @user
       @user.authentication_token = SecureRandom.hex
