@@ -1,0 +1,20 @@
+<div class="doc-content">
+  {{#paper-content class="md-whiteframe-z1"}}
+    {{#paper-list}}
+      {{#paper-subheader class="md-no-sticky"}}Courses{{/paper-subheader}}
+      {{#each course in model}}
+      {{paper-divider}}
+      {{#paper-item}}
+        <p>{{course.name}}</p>
+        {{#paper-button class="md-secondary" icon-button=true action="updateInventory"}}
+          {{paper-icon icon="delete"}}
+        {{/paper-button}}
+      {{/paper-item}}
+      {{else}}
+        {{#paper-item}}
+          <p>Somethings not right here......</p>
+        {{/paper-item}}
+      {{/each}}
+    {{/paper-list}}
+  {{/paper-content}}
+</div>
