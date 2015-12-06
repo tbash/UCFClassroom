@@ -26,85 +26,60 @@ courses:
     description: |
                  Calculus IV
 
-slides:
+slide_containers:
 
   - course_id: 1
-    course_session: 1
+    course_session_id: 1
+
+slides:
+
+  - order_no: 1
+    slide_container_id: 1
     content: |
              ## This is something
 
-  - course_id: 1
-    course_session: 1
+  - order_no: 2
+    slide_container_id: 1
     content: |
              ## This is something
              ### This is sub something
              * This is a point for that and still should be hashed
-             ```
+             ```rb
              # this is a code block
              def print_line
                puts "i hope this hashes lol "
              end
              ```
 
-  - course_id: 1
-    course_session: 1
+  - order_no: 3
+    slide_container_id: 1
     content: |
              ## This is something
              ### This is sub something
              * This is a point for that and still should be hashed
-             ```
+             ```rb
              # this is a code block
              def print_line
                puts " "
              end
              ```
 
-  - course_id: 4
-    course_session: 1
-    content: |
-           ## I am Professor Dora
-
-  - course_id: 4
-    course_session: 1
-    content: |
-             ## Soy dora profesor
-
-  - course_id: 4
-    course_session: 1
-    content: |
-             ## This is the map
-
-  - course_id: 4
-    course_session: 1
-    content: |
-             ## Este es el mapa
-
-  - course_id: 4
-    course_session: 1
-    content: |
-             ## This is my monkey, Boots
-
-  - course_id: 4
-    course_session: 1
-    content: |
-             ## Esta es mi mono, botas
-
-  - course_id: 1
-    course_session: 1
+  - order_no: 4
+    slide_container_id: 1
     content: |
              ## Boots is your T.A. for the course
 
-  - course_id: 1
-    course_session: 1
+  - order_no: 5
+    slide_container_id: 1
     content: |
              ## Botas es su asistente de enseñanza para el curso
 
-  - course_id: 1
-    course_session: 1
+  - order_no: 6
+    slide_container_id: 1
     content: |
              ## Say backpack!
-  - course_id: 1
-    course_session: 1
+  - order_no: 7
+    slide_container_id: 1
     content: |
              ## Diga mochila
 
@@ -116,6 +91,47 @@ assignments:
     grade: 100.00
     course_id: 1
 
+<<<<<<< HEAD
+  - title: Quiz 1
+    assignment_type: 0
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 1
+    user_id: 2
+
+  - title: Quiz 2
+    assignment_type: 1
+    due: 2001-09-28 03:00:00
+    grade: 100.00
+    course_id: 1
+    user_id: 1
+
+problems:
+
+  - assignment_id: 1
+    number: 1
+    question: What did you learn?
+    student_answer: Nothing
+    correct_answer: Everything
+    problem_type: 0
+    correct: false
+
+  - assignment_id: 2
+    number: 1
+    question: What did you learn?
+    student_answer: Nothing
+    correct_answer: Everything
+    problem_type: 0
+    correct: false
+
+  - assignment_id: 3
+    number: 1
+    question: What did you learn?
+    student_answer: Everything
+    correct_answer: Everything
+    problem_type: 0
+    correct: true
+=======
   - title: Big Tree Mountain
     assignment_type: 3
     due: 2001-09-28 03:00:00
@@ -133,6 +149,7 @@ assignments:
     due: 2001-12-8 03:00:00
     grade: 100.00
     course_id: 1
+>>>>>>> master
 
 messages:
 

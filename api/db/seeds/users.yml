@@ -36,7 +36,7 @@ users:
     nid: ad123456
     password: password
     password_confirmation: password
-    role: 0
+    role: 2
 
   - email: Gary@knight.ucf.edu
     first_name: Gary

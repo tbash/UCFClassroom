@@ -5,7 +5,8 @@ class CreateProblems < ActiveRecord::Migration
       t.string :question
       t.string :student_answer
       t.string :correct_answer
-      t.integer :type
+      t.integer :problem_type
+      t.boolean :correct
       t.belongs_to :assignment, index: true, foreign_key: true
 
       t.timestamps
