@@ -1,5 +1,6 @@
 /.vagrant
 *.swp
+node_modules/
 .DS_Store
 classroom.ucf.edu/node_modules
 classroom.ucf.edu/dist/bundle.*

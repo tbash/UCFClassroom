@@ -40,9 +40,8 @@ ActiveRecord::Schema.define(version: 20151129151030) do
   create_table "enrollments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_id"
-    t.decimal  "course_grade", precision: 5, scale: 2
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "messages", force: :cascade do |t|
