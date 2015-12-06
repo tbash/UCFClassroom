@@ -91,7 +91,6 @@ assignments:
     grade: 100.00
     course_id: 1
 
-<<<<<<< HEAD
   - title: Quiz 1
     assignment_type: 0
     due: 2001-09-28 03:00:00
@@ -131,25 +130,6 @@ problems:
     correct_answer: Everything
     problem_type: 0
     correct: true
-=======
-  - title: Big Tree Mountain
-    assignment_type: 3
-    due: 2001-09-28 03:00:00
-    grade: 100.00
-    course_id: 4
-
-  - title: Spooky River
-    assignment_type: 4
-    due: 2001-10-15 03:00:00
-    grade: 100.00
-    course_id: 4
-
-  - title: ¿Por que no las dos?
-    assignment_type: 4
-    due: 2001-12-8 03:00:00
-    grade: 100.00
-    course_id: 1
->>>>>>> master
 
 messages:
 
