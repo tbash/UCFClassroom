@@ -12,7 +12,6 @@ unless Rails.env.production?
   users_config["enrollments"].each do |enroll|
     user = User.find(enroll["user_id"].to_i)
     course = Course.find(enroll["courses_id"].to_i)
-
     user.courses << course
     if user.instructor?
       course.instructor_id = user.id
