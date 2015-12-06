@@ -39,8 +39,9 @@ ActiveRecord::Schema.define(version: 20151101070258) do
   create_table "enrollments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.decimal  "course_grade", precision: 5, scale: 2
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "messages", force: :cascade do |t|
@@ -80,7 +81,7 @@ ActiveRecord::Schema.define(version: 20151101070258) do
     t.string   "last_name"
     t.string   "username"
     t.string   "email",                default: "", null: false
-    t.string   "pid"
+    t.string   "nid"
     t.string   "authentication_token"
     t.string   "password_digest"
     t.integer  "role"
@@ -88,7 +89,7 @@ ActiveRecord::Schema.define(version: 20151101070258) do
     t.datetime "updated_at",                        null: false
     t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["pid"], name: "index_users_on_pid", unique: true, using: :btree
+    t.index ["nid"], name: "index_users_on_nid", unique: true, using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
